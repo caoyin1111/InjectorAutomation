@@ -1,0 +1,4 @@
+F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\obj\Debug\InjectorMainWindow.csprojAssemblyReference.cache
+F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\obj\Debug\MainWindow.g.cs
+F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\obj\Debug\InjectorMainWindow_MarkupCompile.cache
+F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\obj\Debug\InjectorMainWindow_MarkupCompile.lref

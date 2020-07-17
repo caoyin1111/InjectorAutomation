@@ -1,0 +1,13 @@
+{
+  "Control": {
+    "ComName": "COM1",
+    "Parity": "None",
+    "BaudRate": "115200",
+    "StopBits": "One",
+    "DataBits": "8"
+  },
+  "Server": {
+    "IP": "",
+    "Port": 7878
+  }
+}

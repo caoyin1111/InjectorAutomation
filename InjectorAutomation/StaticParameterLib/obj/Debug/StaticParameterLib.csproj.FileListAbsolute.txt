@@ -1,0 +1,10 @@
+F:\ctest\InjectorAutomation\InjectorAutomation\StaticParameterLib\bin\Debug\StaticParameterLib.dll
+F:\ctest\InjectorAutomation\InjectorAutomation\StaticParameterLib\bin\Debug\StaticParameterLib.pdb
+F:\ctest\InjectorAutomation\InjectorAutomation\StaticParameterLib\bin\Debug\Interfaces.dll
+F:\ctest\InjectorAutomation\InjectorAutomation\StaticParameterLib\bin\Debug\Newtonsoft.Json.dll
+F:\ctest\InjectorAutomation\InjectorAutomation\StaticParameterLib\bin\Debug\Interfaces.pdb
+F:\ctest\InjectorAutomation\InjectorAutomation\StaticParameterLib\bin\Debug\Newtonsoft.Json.xml
+F:\ctest\InjectorAutomation\InjectorAutomation\StaticParameterLib\obj\Debug\StaticParameterLib.csprojAssemblyReference.cache
+F:\ctest\InjectorAutomation\InjectorAutomation\StaticParameterLib\obj\Debug\StaticParameterLib.csproj.CopyComplete
+F:\ctest\InjectorAutomation\InjectorAutomation\StaticParameterLib\obj\Debug\StaticParameterLib.dll
+F:\ctest\InjectorAutomation\InjectorAutomation\StaticParameterLib\obj\Debug\StaticParameterLib.pdb
