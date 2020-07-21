@@ -16,7 +16,6 @@
     Width="800"
     Height="600"
     list:Class="InjectorMainWindow.MainWindow"
-    KeyUp="MoveKey"
     mc:Ignorable="d">
     <controls:MetroWindow.Resources>
         <ResourceDictionary>
@@ -26,7 +25,7 @@
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
-                <ResourceDictionary Source="Resources/Icons.xaml" />
+                <ResourceDictionary Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\Icons.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
             <Style list:Key="DescriptionHeaderStyle" TargetType="Label">
@@ -79,12 +78,12 @@
                     </Setter>
                 </Style.Setters>
             </Style>
-
+            <changes:ValueDescChanged list:Key="gridside" DesValue="40" />
         </ResourceDictionary>
     </controls:MetroWindow.Resources>
     <Canvas Name="mainLayout" Background="#ededed">
         <Grid
-            Width="744"
+            Width="{Binding ElementName=main, Path=ActualWidth, Converter={StaticResource gridside}}"
             Height="{Binding ElementName=mainLayout, Path=ActualHeight}" Canvas.Left="50">
             <Grid.RowDefinitions>
                 <RowDefinition Height="30" />
@@ -108,7 +107,7 @@
                         MouseDown="Link"
                         Orientation="Horizontal"
                         Style="{StaticResource menuitem}">
-                        <Image Margin="5" Source="Resources/link.png" />
+                        <Image Margin="5" Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\link.png" />
                         <TextBlock
                             Margin="5"
                             VerticalAlignment="Center"
@@ -119,7 +118,7 @@
                         MouseDown="DisLink"
                         Orientation="Horizontal"
                         Style="{StaticResource menuitem}">
-                        <Image Margin="5" Source="Resources/dislink.png" />
+                        <Image Margin="5" Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\dislink.png" />
                         <TextBlock
                             Margin="5"
                             VerticalAlignment="Center"
@@ -131,7 +130,7 @@
                     Grid.Column="1"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
-                    MouseUp="ToolBarDoubelClick">
+                  >
                     <TextBlock Name="version" Text="" />
                 </Border>
             </Grid>
@@ -148,102 +147,109 @@
                 </controls:MetroAnimatedSingleRowTabControl.ItemContainerStyle>
                 <TabItem Header="图表">
                     <StackPanel>
-                        <GroupBox Header="折叠屏控制">
-                            <StackPanel>
-                                <DockPanel VerticalAlignment="Center" Margin="10">
-                                    <Label DockPanel.Dock="Left" FontSize="20" Margin="10">A屏</Label>
-                                    <TextBlock Margin="10" FontSize="20" HorizontalAlignment="Right" Text="{Binding ElementName=angleA, Path=Value}" DockPanel.Dock="Right"/>
-                                    <Slider
-                                        list:Name="angleA"
-                                        AutoToolTipPlacement="TopLeft"
-                                        AutoToolTipPrecision="0"
-                                        IsSnapToTickEnabled="True"
-                                        Maximum="360"
-                                        Minimum="0"
-                                        SmallChange="90"
-                                        TickFrequency="90"
-                                        TickPlacement="BottomRight"/>
-                                </DockPanel>
-                                <DockPanel VerticalAlignment="Center" Margin="10">
-                                    <Label DockPanel.Dock="Left" FontSize="20" Margin="10">B屏</Label>
-                                    <TextBlock Margin="10" FontSize="20" HorizontalAlignment="Right" Text="{Binding ElementName=angleB, Path=Value}" DockPanel.Dock="Right"/>
-                                    <Slider
-                                     list:Name="angleB"
-                                        AutoToolTipPlacement="TopLeft"
-                                        AutoToolTipPrecision="0"
-                                        IsSnapToTickEnabled="True"
-                                        Maximum="270"
-                                        Minimum="0"
-                                        SmallChange="90"
-                                        TickFrequency="90"
-                                        TickPlacement="BottomRight" />
-                                </DockPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <GroupBox Header="左右平台A" Width="350">
+                                <StackPanel>
+                                    <StackPanel Width="350" Height="40" Orientation="Horizontal">
+                                        <TextBlock Text="水平轴x:" FontSize="18" Margin="20,10,0,1">
+                                        </TextBlock>
+                                        <TextBlock Text="{Binding distanceAX}" FontSize="18" Margin="5,10,0,1">
+                                        </TextBlock>
 
-                                <StackPanel Orientation="Horizontal">
-                                    <Button 
-                                        Width="100"
-                                        Margin="5"
-                                        list:Name="buttonReset"
-                                        Click="ButtonReset_Click"
-                                        DockPanel.Dock="Right">
-                                        复位
-                                    </Button>
-                                    <Button 
-                                        Width="100"
-                                        Margin="5"
-                                        list:Name="buttonMove"
-                                        Click="ButtonMove_Click"
-                                        DockPanel.Dock="Right">
-
-                                        移动
-                                    </Button>
-                                    <Button 
-                                        Width="100"
-                                        Margin="5"
-                                        list:Name="buttonRead"
-                                        Click="ButtonRead_Click"
-                                        DockPanel.Dock="Right">
-                                        读取位置
-                                    </Button>
+                                    </StackPanel>
+                                    <StackPanel Width="350" Height="350">
+                                        <Button Width="70" Height="70">
+                                            <Image Width="60" Height="60" Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\up.png">
+                                            </Image>
+                                        </Button>
+                                        <Button Width="70" Height="70" Margin="1,1,150,0">
+                                            <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\left.png">
+                                            </Image>
+                                        </Button>
+                                        <Button Width="70" Height="70" Margin="147,-70,0,1">
+                                            <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\right.png">
+                                            </Image>
+                                        </Button>
+                                        <Button Width="70" Height="70">
+                                            <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\down.png">
+                                            </Image>
+                                        </Button>
+                                        <Button Width="70" Height="70" Margin="0,-142,0,200">
+                                            <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\refresh.png">
+                                            </Image>
+                                        </Button>
+                                    </StackPanel>
                                 </StackPanel>
-                            </StackPanel>
-                        </GroupBox>
 
-                        <StackPanel Orientation="Horizontal"  Margin="0,40">
-                            <ListBox Name="comsBox">
-                                <ListBox.ItemTemplate>
-                                    <DataTemplate>
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="70" />
-                                                <ColumnDefinition Width="*" />
-                                            </Grid.ColumnDefinitions>
-                                            <TextBlock
-                                                Grid.Column="0"
-                                                VerticalAlignment="Center"
-                                                Text="{Binding Key, Mode=TwoWay}" />
-                                            <Border
-                                                Grid.Column="1"
-                                                Width="130"
-                                                Margin="1"
-                                                BorderBrush="Black"
-                                                BorderThickness="0,1,0,2"
-                                                CornerRadius="4">
-                                                <ComboBox
-                                                  
-                                                    Width="130"
-                                                    HorizontalContentAlignment="Center"
-                                                    VerticalContentAlignment="Center"
-                                                    Background="{x:Null}"
-                                                    BorderThickness="0"
-                                                    Foreground="#444444"
-                                                    ItemsSource="{Binding ElementName=main, Path=ExitComs}"
-                                                    SelectedItem="{Binding Path=Value, Mode=TwoWay}" />
-                                            </Border>
-                                        </Grid>
-                                    </DataTemplate>
-                                </ListBox.ItemTemplate>
-                            </ListBox>
+                            </GroupBox>
+                            <GroupBox Header="左右平台B" Width="450">
+                                <StackPanel Width="450" Height="350">
+                                    <StackPanel Width="450" Height="40" Orientation="Horizontal">
+                                        <TextBlock Text="水平轴x:" FontSize="18" Margin="20,10,0,1">
+                                        </TextBlock>
+                                        <TextBlock Text="{Binding distanceBX}" FontSize="18" Margin="5,10,0,1">
+
+                                        </TextBlock>
+                                        <TextBlock Text="垂直轴z:" FontSize="18" Margin="120,10,0,1">
+                                        </TextBlock>
+                                        <TextBlock Text="{Binding distanceZ}" FontSize="18" Margin="5,10,0,1">
+                                        </TextBlock>
+                                    </StackPanel>
+                                    <StackPanel Width="450" Height="350" Orientation="Horizontal">
+                                        <StackPanel Width="300" Height="350">
+                                            <Button Width="70" Height="70" Margin="-50,0,0,0">
+                                                <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\up.png">
+                                                </Image>
+                                            </Button>
+                                            <Button Width="70" Height="70" Margin="-51,1,150,0">
+                                                <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\left.png">
+                                                </Image>
+                                            </Button>
+                                            <Button Width="70" Height="70" Margin="97,-70,0,1">
+                                                <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\right.png">
+                                                </Image>
+                                            </Button>
+                                            <Button Width="70" Height="70" Margin="-50,0,0,0">
+                                                <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\down.png">
+                                                </Image>
+                                            </Button>
+                                            <Button Width="70" Height="70" Margin="-50,-142,0,100">
+                                                <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\refresh.png">
+                                                </Image>
+                                            </Button>
+                                        </StackPanel>
+                                        <StackPanel Height="350">
+                                            <Button Width="70" Height="70" Margin="-18,0,0,0">
+                                                <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\up.png">
+                                                </Image>
+                                            </Button>
+                                            <Button Width="70" Height="70" Margin="-18,2,0,0">
+                                                <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\refresh.png">
+                                                </Image>
+                                            </Button>
+                                            <Button Width="70" Height="70" Margin="-18,2,0,0">
+                                                <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\down.png">
+                                                </Image>
+                                            </Button>
+
+                                        </StackPanel>
+
+
+
+
+
+                                    </StackPanel>
+
+                                </StackPanel>
+
+                            </GroupBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal"  Margin="0,20">
+                            <ComboBox BorderThickness="0" Background="{x:Null}" ItemsSource="{Binding ElementName=main,Path=ExitComs}" Foreground="#444444"
+                                                          Name="com"
+                                                           Width="130"
+                                                          VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
+                            </ComboBox>
 
                             <Button
                                 Height="40"
@@ -252,7 +258,7 @@
                                 VerticalAlignment="Top"
                                 Click="RefreshComs">
                                 <Button.Content>
-                                    <Image Source="Resources/refresh.png" />
+                                    <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\refresh.png" />
                                 </Button.Content>
                             </Button>
 
@@ -287,8 +293,9 @@
                                 FontSize="18"
                                 Text="8787" />
                         </StackPanel>
-                    </StackPanel>
 
+                    </StackPanel>
+                   
                 </TabItem>
                 <TabItem Header="日志">
                     <Grid>
@@ -318,7 +325,7 @@
                             ScrollViewer.PanningRatio="10"
                             VerticalScrollBarVisibility="Visible">
                             <RichTextBox.Background>
-                                <ImageBrush ImageSource="Resources/log.jpg" Opacity="0.2" />
+                                <ImageBrush ImageSource="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\log.jpg" Opacity="0.2" />
                             </RichTextBox.Background>
                             <FlowDocument>
                                 <Paragraph Name="logBox">
@@ -413,10 +420,10 @@
                                 <Button
                                     Height="30"
                                     Background="{x:Null}"
-                                    Click="LoadConfig">
+                                   >
                                     <Button.Content>
                                         <StackPanel Width="60" Orientation="Horizontal">
-                                            <Image Source="Resources/load.png" />
+                                            <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\load.png" />
                                             <TextBlock
                                                 VerticalAlignment="Center"
                                                 FontSize="16"
@@ -429,10 +436,10 @@
                                     Height="30"
                                     Margin="1"
                                     Background="{x:Null}"
-                                    Click="UpLoadConfig">
+                                  >
                                     <Button.Content>
                                         <StackPanel Width="60" Orientation="Horizontal">
-                                            <Image Source="Resources/load.png" />
+                                            <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\load.png" />
                                             <TextBlock
                                                 VerticalAlignment="Center"
                                                 FontSize="16"
@@ -464,9 +471,9 @@
                                     <Button
                                         Height="30"
                                         HorizontalAlignment="Center"
-                                        Click="AddPhoneItemClick">
+                                       >
                                         <Button.Content>
-                                            <Image Source="Resources/add.png" />
+                                            <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\add.png" />
                                         </Button.Content>
                                     </Button>
                                     <Button
@@ -474,7 +481,7 @@
                                         Margin="5"
                                         HorizontalAlignment="Center">
                                         <Button.Content>
-                                            <Image Source="Resources/remove.png" />
+                                            <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\remove.png" />
                                         </Button.Content>
                                     </Button>
                                 </StackPanel>

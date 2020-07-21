@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>InjectorAutomation</RootNamespace>
     <AssemblyName>InjectorAutomation</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -77,9 +78,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ControlLib\ControlLib.csproj">
+      <Project>{68769846-E741-4C6E-A68F-66300D1F04E3}</Project>
+      <Name>ControlLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\InjectionServerLib\InjectionServerLib.csproj">
       <Project>{81E0DF1E-611D-4880-8487-6EC17EE1BFBE}</Project>
       <Name>InjectionServerLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InjectorMainWindow\InjectorMainWindow.csproj">
+      <Project>{9A78A8BE-F77D-483C-8792-CB885A55A517}</Project>
+      <Name>InjectorMainWindow</Name>
     </ProjectReference>
     <ProjectReference Include="..\Interfaces\Interfaces.csproj">
       <Project>{91DB91BF-9BC0-4370-9101-9B3C9A44CE0E}</Project>
@@ -92,6 +101,14 @@
     <ProjectReference Include="..\StaticParameterLib\StaticParameterLib.csproj">
       <Project>{0D3A77F4-C540-41AD-A81B-B8ACF7B55C72}</Project>
       <Name>StaticParameterLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StationLib\StationLib.csproj">
+      <Project>{7A7F47B0-349C-40C5-9D2A-DFE5BDDAFA48}</Project>
+      <Name>StationLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaskInvokeLib\TaskInvokeLib.csproj">
+      <Project>{44CA2531-2476-423E-8062-8A4C7C90C59F}</Project>
+      <Name>TaskInvokeLib</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

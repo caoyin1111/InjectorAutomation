@@ -1,0 +1,30 @@
+[2020/7/20 14:02:43 , Normal] ->  
+ [2020/7/20 14:02:43 , Erro] -> 程序运行错误:Autofac.Core.Registration.ComponentNotRegisteredException: The requested service 'Interfaces.Interfaces.IWindow' has not been registered. To avoid this exception, either register a component to provide the service, check for service registration using IsRegistered(), or use the ResolveOptional() method to resolve an optional dependency.
+   在 Autofac.ResolutionExtensions.ResolveService(IComponentContext context, Service service, IEnumerable`1 parameters)
+   在 Autofac.ResolutionExtensions.Resolve[TService](IComponentContext context, IEnumerable`1 parameters)
+   在 Autofac.ResolutionExtensions.Resolve[TService](IComponentContext context)
+   在 InjectionServerLib.InjectionService.Resolve[T]() 位置 F:\ctest\InjectorAutomation\InjectorAutomation\InjectionServerLib\InjectionService.cs:行号 54
+   在 InjectorAutomation.Program.Main(String[] args) 位置 F:\ctest\InjectorAutomation\InjectorAutomation\InjectorAutomation\Program.cs:行号 70 
+ [2020/7/20 17:01:48 , Normal] ->  
+ [2020/7/20 17:01:48 , Erro] -> 程序运行错误:Autofac.Core.Registration.ComponentNotRegisteredException: The requested service 'Interfaces.Interfaces.IWindow' has not been registered. To avoid this exception, either register a component to provide the service, check for service registration using IsRegistered(), or use the ResolveOptional() method to resolve an optional dependency.
+   在 Autofac.ResolutionExtensions.ResolveService(IComponentContext context, Service service, IEnumerable`1 parameters)
+   在 Autofac.ResolutionExtensions.Resolve[TService](IComponentContext context, IEnumerable`1 parameters)
+   在 Autofac.ResolutionExtensions.Resolve[TService](IComponentContext context)
+   在 InjectionServerLib.InjectionService.Resolve[T]() 位置 F:\ctest\InjectorAutomation\InjectorAutomation\InjectionServerLib\InjectionService.cs:行号 54
+   在 InjectorAutomation.Program.Main(String[] args) 位置 F:\ctest\InjectorAutomation\InjectorAutomation\InjectorAutomation\Program.cs:行号 70 
+ [2020/7/20 17:02:12 , Normal] ->  
+ [2020/7/20 17:02:12 , Erro] -> 程序运行错误:Autofac.Core.Registration.ComponentNotRegisteredException: The requested service 'Interfaces.Interfaces.IWindow' has not been registered. To avoid this exception, either register a component to provide the service, check for service registration using IsRegistered(), or use the ResolveOptional() method to resolve an optional dependency.
+   在 Autofac.ResolutionExtensions.ResolveService(IComponentContext context, Service service, IEnumerable`1 parameters)
+   在 Autofac.ResolutionExtensions.Resolve[TService](IComponentContext context, IEnumerable`1 parameters)
+   在 Autofac.ResolutionExtensions.Resolve[TService](IComponentContext context)
+   在 InjectionServerLib.InjectionService.Resolve[T]() 位置 F:\ctest\InjectorAutomation\InjectorAutomation\InjectionServerLib\InjectionService.cs:行号 54
+   在 InjectorAutomation.Program.Main(String[] args) 位置 F:\ctest\InjectorAutomation\InjectorAutomation\InjectorAutomation\Program.cs:行号 70 
+ [2020/7/20 17:02:39 , Normal] ->  
+ [2020/7/20 17:02:39 , Erro] -> 程序运行错误:Autofac.Core.Registration.ComponentNotRegisteredException: The requested service 'Interfaces.Interfaces.IWindow' has not been registered. To avoid this exception, either register a component to provide the service, check for service registration using IsRegistered(), or use the ResolveOptional() method to resolve an optional dependency.
+   在 Autofac.ResolutionExtensions.ResolveService(IComponentContext context, Service service, IEnumerable`1 parameters)
+   在 Autofac.ResolutionExtensions.Resolve[TService](IComponentContext context, IEnumerable`1 parameters)
+   在 Autofac.ResolutionExtensions.Resolve[TService](IComponentContext context)
+   在 InjectionServerLib.InjectionService.Resolve[T]() 位置 F:\ctest\InjectorAutomation\InjectorAutomation\InjectionServerLib\InjectionService.cs:行号 54
+   在 InjectorAutomation.Program.Main(String[] args) 位置 F:\ctest\InjectorAutomation\InjectorAutomation\InjectorAutomation\Program.cs:行号 70 
+ [2020/7/20 17:03:31 , Normal] ->  
+ 

@@ -1,13 +1,17 @@
-﻿using InjectionServerLib;
+﻿using ControlLib;
+using InjectionServerLib;
+using InjectorMainWindow;
 using Interfaces.Expends;
 using Interfaces.Interfaces;
 using LogLib;
 using StaticParameterLib;
+using StationLib;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TaskInvokeLib;
 
 namespace InjectorAutomation
 {
@@ -37,6 +41,11 @@ namespace InjectorAutomation
             Service.InjectionSingleInstance<ILog>(new Log("日志内容"));
             Service.InjectionSingleInstance<IStaticParameter>(StaticParameters);
             Service.InjectionSingleInstance<IService>(Service);
+            Service.InjectionSingleInstance<IWindow, MainWindow>();
+            Service.InjectionSingleInstance<ITaskInoke, TaskInvoke>();
+            Service.InjectionSingleInstance<IServerStation, Station>();
+            Service.InjectionSingleInstance<IControl, ControlCom>();
+
             Service.Start();
 
         }

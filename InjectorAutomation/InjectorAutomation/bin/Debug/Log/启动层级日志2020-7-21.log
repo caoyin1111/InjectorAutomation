@@ -1,0 +1,57 @@
+[2020/7/21 11:00:26 , Normal] ->  
+ [2020/7/21 11:00:46 , Erro] -> 程序运行错误:Autofac.Core.DependencyResolutionException: An exception was thrown while activating InjectorMainWindow.MainWindow. ---> Autofac.Core.DependencyResolutionException: An exception was thrown while invoking the constructor 'Void .ctor()' on type 'MainWindow'. ---> System.Windows.Markup.XamlParseException: “在“System.Windows.Baml2006.TypeConverterMarkupExtension”上提供值时引发了异常。”，行号为“328”，行位置为“34”。 ---> System.IO.IOException: 找不到资源“resources/log.jpg”。
+   在 MS.Internal.AppModel.ResourcePart.GetStreamCore(FileMode mode, FileAccess access)
+   在 System.IO.Packaging.PackagePart.GetStream(FileMode mode, FileAccess access)
+   在 System.IO.Packaging.PackWebResponse.CachedResponse.GetResponseStream()
+   在 System.IO.Packaging.PackWebResponse.GetResponseStream()
+   在 System.IO.Packaging.PackWebResponse.get_ContentType()
+   在 System.Windows.Media.Imaging.BitmapDecoder.SetupDecoderFromUriOrStream(Uri uri, Stream stream, BitmapCacheOption cacheOption, Guid& clsId, Boolean& isOriginalWritable, Stream& uriStream, UnmanagedMemoryStream& unmanagedMemoryStream, SafeFileHandle& safeFilehandle)
+   在 System.Windows.Media.Imaging.BitmapDecoder.CreateFromUriOrStream(Uri baseUri, Uri uri, Stream stream, BitmapCreateOptions createOptions, BitmapCacheOption cacheOption, RequestCachePolicy uriCachePolicy, Boolean insertInDecoderCache)
+   在 System.Windows.Media.Imaging.BitmapFrame.CreateFromUriOrStream(Uri baseUri, Uri uri, Stream stream, BitmapCreateOptions createOptions, BitmapCacheOption cacheOption, RequestCachePolicy uriCachePolicy)
+   在 System.Windows.Media.ImageSourceConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   在 System.Windows.Baml2006.TypeConverterMarkupExtension.ProvideValue(IServiceProvider serviceProvider)
+   在 MS.Internal.Xaml.Runtime.ClrObjectRuntime.CallProvideValue(MarkupExtension me, IServiceProvider serviceProvider)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Windows.Markup.WpfXamlLoader.Load(XamlReader xamlReader, IXamlObjectWriterFactory writerFactory, Boolean skipJournaledProperties, Object rootObject, XamlObjectWriterSettings settings, Uri baseUri)
+   在 System.Windows.Markup.WpfXamlLoader.LoadBaml(XamlReader xamlReader, Boolean skipJournaledProperties, Object rootObject, XamlAccessLevel accessLevel, Uri baseUri)
+   在 System.Windows.Markup.XamlReader.LoadBaml(Stream stream, ParserContext parserContext, Object parent, Boolean closeStream)
+   在 System.Windows.Application.LoadComponent(Object component, Uri resourceLocator)
+   在 InjectorMainWindow.MainWindow.InitializeComponent() 位置 F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\MainWindow.xaml:行号 1
+   在 InjectorMainWindow.MainWindow..ctor() 位置 F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\MainWindow.xaml.cs:行号 70
+   在 lambda_method(Closure , Object[] )
+   在 Autofac.Core.Activators.Reflection.ConstructorParameterBinding.Instantiate()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Autofac.Core.Activators.Reflection.ConstructorParameterBinding.Instantiate()
+   在 Autofac.Core.Activators.Reflection.ReflectionActivator.ActivateInstance(IComponentContext context, IEnumerable`1 parameters)
+   在 Autofac.Core.Resolving.InstanceLookup.Activate(IEnumerable`1 parameters, Object& decoratorTarget)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Autofac.Core.Resolving.InstanceLookup.Activate(IEnumerable`1 parameters, Object& decoratorTarget)
+   在 Autofac.Core.Resolving.InstanceLookup.<>c__DisplayClass6_0.<Execute>b__0()
+   在 Autofac.Core.Lifetime.LifetimeScope.GetOrCreateAndShare(Guid id, Func`1 creator)
+   在 Autofac.Core.Resolving.InstanceLookup.Execute()
+   在 Autofac.Core.Resolving.ResolveOperation.GetOrCreateInstance(ISharingLifetimeScope currentOperationScope, IComponentRegistration registration, IEnumerable`1 parameters)
+   在 Autofac.Core.Resolving.ResolveOperation.Execute(IComponentRegistration registration, IEnumerable`1 parameters)
+   在 Autofac.Core.Lifetime.LifetimeScope.ResolveComponent(IComponentRegistration registration, IEnumerable`1 parameters)
+   在 Autofac.Core.Container.ResolveComponent(IComponentRegistration registration, IEnumerable`1 parameters)
+   在 Autofac.ResolutionExtensions.TryResolveService(IComponentContext context, Service service, IEnumerable`1 parameters, Object& instance)
+   在 Autofac.ResolutionExtensions.ResolveService(IComponentContext context, Service service, IEnumerable`1 parameters)
+   在 Autofac.ResolutionExtensions.Resolve[TService](IComponentContext context, IEnumerable`1 parameters)
+   在 Autofac.ResolutionExtensions.Resolve[TService](IComponentContext context)
+   在 InjectionServerLib.InjectionService.Resolve[T]() 位置 F:\ctest\InjectorAutomation\InjectorAutomation\InjectionServerLib\InjectionService.cs:行号 54
+   在 InjectorAutomation.Program.Main(String[] args) 位置 F:\ctest\InjectorAutomation\InjectorAutomation\InjectorAutomation\Program.cs:行号 79 
+ [2020/7/21 11:02:05 , Normal] ->  
+ [2020/7/21 11:05:09 , Normal] ->  
+ [2020/7/21 11:07:53 , Normal] ->  
+ [2020/7/21 11:10:22 , Normal] ->  
+ [2020/7/21 11:10:52 , Normal] ->  
+ [2020/7/21 13:03:50 , Normal] ->  
+ [2020/7/21 13:04:43 , Normal] ->  
+ [2020/7/21 13:06:43 , Normal] ->  
+ [2020/7/21 13:09:06 , Normal] ->  
+ [2020/7/21 13:14:10 , Normal] ->  
+ [2020/7/21 13:17:58 , Normal] ->  
+ [2020/7/21 13:19:00 , Normal] ->  
+ [2020/7/21 13:20:23 , Normal] ->  
+ [2020/7/21 13:24:08 , Normal] ->  
+ [2020/7/21 13:28:47 , Normal] ->  
+ 

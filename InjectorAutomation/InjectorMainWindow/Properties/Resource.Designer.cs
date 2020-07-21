@@ -83,6 +83,16 @@ namespace InjectorMainWindow.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap camera {
+            get {
+                object obj = ResourceManager.GetObject("camera", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap chart {
             get {
                 object obj = ResourceManager.GetObject("chart", resourceCulture);
@@ -131,6 +141,27 @@ namespace InjectorMainWindow.Properties {
         }
         
         /// <summary>
+        ///   查找 System.Byte[] 类型的本地化资源。
+        /// </summary>
+        internal static byte[] Entypo {
+            get {
+                object obj = ResourceManager.GetObject("Entypo", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Entypo (http://www.entypo.com/) is created by Daniel Bruce and released under the Creative Commons, Share Alike/Attribution license.
+        ///
+        ///http://creativecommons.org/licenses/by-sa/3.0/ 的本地化字符串。
+        /// </summary>
+        internal static string Entypo_license {
+            get {
+                return ResourceManager.GetString("Entypo_license", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
         internal static System.Drawing.Bitmap fingerset {
@@ -147,6 +178,42 @@ namespace InjectorMainWindow.Properties {
             get {
                 object obj = ResourceManager.GetObject("home", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;ResourceDictionary xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot; xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;&gt;
+        ///    &lt;Canvas
+        ///        x:Key=&quot;appbar_3d_3ds&quot;
+        ///        Width=&quot;76&quot;
+        ///        Height=&quot;76&quot;
+        ///        Clip=&quot;F1 M 0,0L 76,0L 76,76L 0,76L 0,0&quot;&gt;
+        ///        &lt;Path
+        ///            Canvas.Left=&quot;23&quot;
+        ///            Canvas.Top=&quot;18&quot;
+        ///            Width=&quot;32&quot;
+        ///            Height=&quot;40&quot;
+        ///            Data=&quot;F1 M 27,18L 23,26L 33,30L 24,38L 33,46L 23,50L 27,58L 45,58L 55,38L 45,18L 27,18 Z &quot;
+        ///        [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        internal static string Icons {
+            get {
+                return ResourceManager.GetString("Icons", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;ResourceDictionary xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+        ///                    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;&gt;
+        ///    &lt;Canvas x:Key=&quot;appbar_3d_3ds&quot; x:Shared=&quot;False&quot; Width=&quot;76&quot; Height=&quot;76&quot; Clip=&quot;F1 M 0,0L 76,0L 76,76L 0,76L 0,0&quot;&gt;
+        ///        &lt;Path Width=&quot;32&quot; Height=&quot;40&quot; Canvas.Left=&quot;23&quot; Canvas.Top=&quot;18&quot; Stretch=&quot;Fill&quot; Fill=&quot;{DynamicResource BlackBrush}&quot; Data=&quot;F1 M 27,18L 23,26L 33,30L 24,38L 33,46L 23,50L 27,58L 45,58L 55,38L 45,18L 27,18 Z &quot;/&gt;
+        ///    &lt;/Canvas&gt;
+        ///
+        /// [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        internal static string IconsNonShared {
+            get {
+                return ResourceManager.GetString("IconsNonShared", resourceCulture);
             }
         }
         
@@ -277,6 +344,27 @@ namespace InjectorMainWindow.Properties {
             get {
                 object obj = ResourceManager.GetObject("upload", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 # License
+        ///
+        ///Please carefully understand the license and download the latest icons at ModernUIIcons.com.
+        ///
+        ///## Understand Your Rights
+        ///No Attribution and No Derived Works
+        ///http://creativecommons.org/licenses/by-nd/3.0/ *
+        ///
+        ///- If your project is open source include this license file in the source.
+        ///- Nothing is needed in the front facing project (UNLESS you
+        ///  are using any of the icons listed below in the attribution section).
+        ///- Commercial use is not only allowed but encouraged. If it is an icon
+        ///  in the  [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        internal static string WindowsIcons_license {
+            get {
+                return ResourceManager.GetString("WindowsIcons_license", resourceCulture);
             }
         }
     }
