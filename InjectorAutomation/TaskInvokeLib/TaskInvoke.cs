@@ -44,7 +44,18 @@ namespace TaskInvokeLib
         };
         public void Close()
         {
-            throw new NotImplementedException();
+            try
+            {
+                Log.log("关闭服务器");
+                ServerStation.Close();
+                Log.log("关闭控制板");
+                ControlCom.Close();
+            }
+            catch(Exception ex)
+            {
+                Log.log("关闭异常");
+                Log.error(ex);
+            }
         }
         /// <summary>
         /// 执行接口

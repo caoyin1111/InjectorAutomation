@@ -49,7 +49,6 @@ namespace InjectorMainWindow
         {
             new MItem(){ Icon = @"F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\home.png", MenuName="首页"},
             new MItem(){ Icon = @"F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\log.png", MenuName="日志"},
-      //      new MItem(){ Icon = @"Resources\deviceconfig.png", MenuName="设备配置"},
             new MItem(){ Icon = @"F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\api.png", MenuName="接口测试"},
         };
         /// <summary>
@@ -78,7 +77,7 @@ namespace InjectorMainWindow
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             leftMenus.ItemsSource = MenuItems;
-            interfaceList.ItemsSource = TaskInoke.GetInterfaces();
+            interfaceList.ItemsSource = TaskInoke.GetInterfaces().ToList();
             Log.LogCallBack += LogMsg;
             pages.SelectedIndex = 0;
             leftMenus.SelectedIndex = 0;
@@ -169,10 +168,8 @@ namespace InjectorMainWindow
         {
             try
             {
-                TaskInoke.Coms[0].Value = com.SelectedItem.ToString();
+                //TaskInoke.Coms[0].Value = com.SelectedItem.ToString();
                 TaskInoke.Link(ipbox.Text, Convert.ToInt32(portbox.Text));
-               
-                
             }
             catch(Exception ex)
             {
@@ -264,6 +261,116 @@ namespace InjectorMainWindow
                 Log.error(ex);
             }
         
+        }
+
+        private int distance = 1;
+        /// <summary>
+        /// 左右平台A向右移动
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MoveA(object sender, RoutedEventArgs e)
+        {
+            //判断键盘按下是否是Ctrl键
+            if((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
+            {
+                distance = 10;
+            }
+            DoTaskParameterItem doTaskParameter = null;
+            Dictionary<string, DoTaskParameterItem> keys = TaskInoke.GetInterfaces();
+            foreach(var item in keys)
+            {
+                if(item.Key.Contains("movehorizontalA"))
+                {
+                    doTaskParameter = item.Value;
+                    doTaskParameter.Paramters[0].Value = distance.ToString();
+                    TaskInoke.DoInterface(doTaskParameter.Url, doTaskParameter);
+                    break;
+                }
+            }
+
+        }
+        /// <summary>
+        /// 左右平台B向右移动
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MoveB(object sender, RoutedEventArgs e)
+        {
+            if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
+            {
+                distance = 10;
+            }
+            DoTaskParameterItem doTaskParameter = null;
+            Dictionary<string, DoTaskParameterItem> keys = TaskInoke.GetInterfaces();
+            foreach (var item in keys)
+            {
+                if(item.Key.Contains("movehorizontalB"))
+                {
+                    doTaskParameter = item.Value;
+                    doTaskParameter.Paramters[0].Value = distance.ToString();
+                    TaskInoke.DoInterface(doTaskParameter.Url, doTaskParameter);
+                    break;
+                }
+            }
+        }
+        /// <summary>
+        /// 左右平台A归零
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RefreshA(object sender, RoutedEventArgs e)
+        {
+            DoTaskParameterItem doTaskParameter = null;
+            Dictionary<string, DoTaskParameterItem> keys = TaskInoke.GetInterfaces();
+            foreach (var item in keys)
+            {
+                if (item.Key.Contains("horizontalAtozero"))
+                {
+                    doTaskParameter = item.Value;
+                    TaskInoke.DoInterface(doTaskParameter.Url, doTaskParameter);
+                    break;
+                }
+            }
+        }
+        /// <summary>
+        /// 左右平台B归零
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RefreshB(object sender, RoutedEventArgs e)
+        {
+            DoTaskParameterItem doTaskParameter = null;
+            Dictionary<string, DoTaskParameterItem> keys = TaskInoke.GetInterfaces();
+            foreach (var item in keys)
+            {
+                if (item.Key.Contains("horizontalBtozero"))
+                {
+                    doTaskParameter = item.Value;
+                    TaskInoke.DoInterface(doTaskParameter.Url, doTaskParameter);
+                    break;
+                }
+            }
+        }
+        /// <summary>
+        /// 垂直轴归零
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RefreshVertical(object sender, RoutedEventArgs e)
+        {
+            DoTaskParameterItem doTaskParameter = null;
+            Dictionary<string, DoTaskParameterItem> keys = TaskInoke.GetInterfaces();
+            foreach (var item in keys)
+            {
+                if (item.Key.Contains("vectrialtozero"))
+                {
+                    doTaskParameter = item.Value;
+
+                    TaskInoke.DoInterface(doTaskParameter.Url, doTaskParameter);
+                    break;
+                }
+            }
         }
     }
 }

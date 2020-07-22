@@ -12,7 +12,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:system="clr-namespace:System;assembly=mscorlib"
     Name="main"
-    Title="折叠屏软件"
+    Title="注射器自动化软件"
     Width="800"
     Height="600"
     list:Class="InjectorMainWindow.MainWindow"
@@ -78,25 +78,26 @@
                     </Setter>
                 </Style.Setters>
             </Style>
-            <changes:ValueDescChanged list:Key="gridside" DesValue="40" />
+            <changes:ValueDescChanged list:Key="gridside" DesValue="55" />
         </ResourceDictionary>
     </controls:MetroWindow.Resources>
-    <Canvas Name="mainLayout" Background="#ededed">
+    
+        <Canvas Name="mainLayout" Background="#ededed">
         <Grid
             Width="{Binding ElementName=main, Path=ActualWidth, Converter={StaticResource gridside}}"
             Height="{Binding ElementName=mainLayout, Path=ActualHeight}" Canvas.Left="50">
             <Grid.RowDefinitions>
                 <RowDefinition Height="30" />
-                <RowDefinition Height="403*" />
-                <RowDefinition Height="138*"/>
+                <RowDefinition Height="67*" />
+                <RowDefinition Height="23*"/>
             </Grid.RowDefinitions>
+
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="50" />
                 <ColumnDefinition Width="73*" />
-                <ColumnDefinition Width="637*"/>
+                <ColumnDefinition Width="622*"/>
             </Grid.ColumnDefinitions>
-
-            <Grid Grid.ColumnSpan="3" Margin="0,0,0,0.4">
+            <Grid Grid.ColumnSpan="3" Margin="0,0,-0.2,0.4">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
                     <ColumnDefinition Width="*" />
@@ -125,7 +126,6 @@
                             Text="断开连接" />
                     </StackPanel>
                 </StackPanel>
-
                 <Border
                     Grid.Column="1"
                     HorizontalAlignment="Center"
@@ -134,139 +134,144 @@
                     <TextBlock Name="version" Text="" />
                 </Border>
             </Grid>
-
-
             <controls:MetroAnimatedSingleRowTabControl
                 Name="pages"
                 Grid.ColumnSpan="3"
-                Margin="0,30,0,0.4" Grid.RowSpan="3" SelectionChanged="pages_SelectionChanged">
+                Margin="0,30,-0.2,0.4" Grid.RowSpan="3" SelectionChanged="pages_SelectionChanged">
                 <controls:MetroAnimatedSingleRowTabControl.ItemContainerStyle>
                     <Style>
                         <Setter Property="TabItem.Visibility" Value="Collapsed" />
                     </Style>
                 </controls:MetroAnimatedSingleRowTabControl.ItemContainerStyle>
-                <TabItem Header="图表">
+    
+    
+        <TabItem Header="图表">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="500*"/>
+            <RowDefinition Height="200*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column="0" Grid.Row="0">
+            <GroupBox Header="左右平台A" Grid.Column="0">
+                <StackPanel>
+                    <StackPanel Height="40" Orientation="Horizontal">
+                        <TextBlock Text="水平轴x:" FontSize="18" Margin="2,10,0,1">
+                        </TextBlock>
+                        <TextBlock Text="{Binding distanceAX}" FontSize="18" Margin="1,10,0,1">
+                        </TextBlock>
+
+                    </StackPanel>
                     <StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                            <GroupBox Header="左右平台A" Width="350">
-                                <StackPanel>
-                                    <StackPanel Width="350" Height="40" Orientation="Horizontal">
-                                        <TextBlock Text="水平轴x:" FontSize="18" Margin="20,10,0,1">
-                                        </TextBlock>
-                                        <TextBlock Text="{Binding distanceAX}" FontSize="18" Margin="5,10,0,1">
-                                        </TextBlock>
+                        <Button Width="70" Height="70" Margin="145,10,145,1">
+                            <Image Width="60" Height="60" Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\up.png">
+                            </Image>
+                        </Button>
+                        <Button Width="70" Height="70" Margin="-50,1,100,1">
+                            <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\left.png">
+                            </Image>
+                        </Button>
+                        <Button Width="70" Height="70" Margin="145,-70,1,1" Click="MoveA">
+                            <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\right.png">
+                            </Image>
+                        </Button>
+                        <Button Width="70" Height="70" Margin="145,1,145,80">
+                            <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\down.png">
+                            </Image>
+                        </Button>
+                        <Button Width="70" Height="70" Margin="1,-375,1,1" Click="RefreshA">
+                            <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\refresh.png">
+                            </Image>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
 
-                                    </StackPanel>
-                                    <StackPanel Width="350" Height="350">
-                                        <Button Width="70" Height="70">
-                                            <Image Width="60" Height="60" Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\up.png">
-                                            </Image>
-                                        </Button>
-                                        <Button Width="70" Height="70" Margin="1,1,150,0">
-                                            <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\left.png">
-                                            </Image>
-                                        </Button>
-                                        <Button Width="70" Height="70" Margin="147,-70,0,1">
-                                            <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\right.png">
-                                            </Image>
-                                        </Button>
-                                        <Button Width="70" Height="70">
-                                            <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\down.png">
-                                            </Image>
-                                        </Button>
-                                        <Button Width="70" Height="70" Margin="0,-142,0,200">
-                                            <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\refresh.png">
-                                            </Image>
-                                        </Button>
-                                    </StackPanel>
-                                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="0">
+            <GroupBox Header="左右平台B">
+                <StackPanel Margin="3">
+                    <StackPanel Margin="3" Height="40" Orientation="Horizontal">
+                        <TextBlock Text="水平轴x:" FontSize="18" Margin="2,10,0,5">
+                        </TextBlock>
+                        <TextBlock Text="{Binding distanceBX}" FontSize="18" Margin="10,10,10,5" Width="65">
 
-                            </GroupBox>
-                            <GroupBox Header="左右平台B" Width="450">
-                                <StackPanel Width="450" Height="350">
-                                    <StackPanel Width="450" Height="40" Orientation="Horizontal">
-                                        <TextBlock Text="水平轴x:" FontSize="18" Margin="20,10,0,1">
-                                        </TextBlock>
-                                        <TextBlock Text="{Binding distanceBX}" FontSize="18" Margin="5,10,0,1">
-
-                                        </TextBlock>
-                                        <TextBlock Text="垂直轴z:" FontSize="18" Margin="120,10,0,1">
-                                        </TextBlock>
-                                        <TextBlock Text="{Binding distanceZ}" FontSize="18" Margin="5,10,0,1">
-                                        </TextBlock>
-                                    </StackPanel>
-                                    <StackPanel Width="450" Height="350" Orientation="Horizontal">
-                                        <StackPanel Width="300" Height="350">
-                                            <Button Width="70" Height="70" Margin="-50,0,0,0">
-                                                <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\up.png">
-                                                </Image>
-                                            </Button>
-                                            <Button Width="70" Height="70" Margin="-51,1,150,0">
-                                                <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\left.png">
-                                                </Image>
-                                            </Button>
-                                            <Button Width="70" Height="70" Margin="97,-70,0,1">
-                                                <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\right.png">
-                                                </Image>
-                                            </Button>
-                                            <Button Width="70" Height="70" Margin="-50,0,0,0">
-                                                <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\down.png">
-                                                </Image>
-                                            </Button>
-                                            <Button Width="70" Height="70" Margin="-50,-142,0,100">
-                                                <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\refresh.png">
-                                                </Image>
-                                            </Button>
-                                        </StackPanel>
-                                        <StackPanel Height="350">
-                                            <Button Width="70" Height="70" Margin="-18,0,0,0">
-                                                <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\up.png">
-                                                </Image>
-                                            </Button>
-                                            <Button Width="70" Height="70" Margin="-18,2,0,0">
-                                                <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\refresh.png">
-                                                </Image>
-                                            </Button>
-                                            <Button Width="70" Height="70" Margin="-18,2,0,0">
-                                                <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\down.png">
-                                                </Image>
-                                            </Button>
-
-                                        </StackPanel>
-
-
-
-
-
-                                    </StackPanel>
-
-                                </StackPanel>
-
-                            </GroupBox>
+                        </TextBlock>
+                        <TextBlock Text="垂直轴z:" FontSize="18" Margin="50,10,0,5">
+                        </TextBlock>
+                        <TextBlock Text="{Binding distanceZ}" FontSize="18" Margin="10,10,0,5" Width="62">
+                        </TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Margin="0,0,0,0" HorizontalAlignment="Stretch" Width="281">
+                            <Button Width="70" Height="70" Margin="77,1,133,1">
+                                <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\up.png">
+                                </Image>
+                            </Button>
+                            <Button Width="70" Height="70" Margin="1,1,202,1">
+                                <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\left.png">
+                                </Image>
+                            </Button>
+                            <Button Height="70" Width="70" Margin="150,-70,54.8,1" Click="MoveB">
+                                <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\right.png">
+                                </Image>
+                            </Button>
+                            <Button Width="70" Height="70" Margin="-55,1,1,76.5">
+                                <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\down.png">
+                                </Image>
+                            </Button>
+                            <Button Height="70" Width="70" Margin="76,-368,130.8,1" Click="RefreshB">
+                                <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\refresh.png">
+                                </Image>
+                            </Button>
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal"  Margin="0,20">
-                            <ComboBox BorderThickness="0" Background="{x:Null}" ItemsSource="{Binding ElementName=main,Path=ExitComs}" Foreground="#444444"
+
+                        <StackPanel Margin="0,0,0,0">
+                            <Button Width="70" Height="70" Margin="1,1,1,3">
+                                <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\up.png">
+                                </Image>
+                            </Button>
+                                            <Button Width="70" Height="70" Margin="1,0,1,3" Click="RefreshVertical">
+                                <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\refresh.png">
+                                </Image>
+                            </Button>
+                            <Button Width="70" Height="70" Margin="1,1,1,3">
+                                <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\down.png">
+                                </Image>
+                            </Button>
+
+                        </StackPanel>
+
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal"  Margin="0,10" Grid.Row="1" Grid.ColumnSpan="2">
+            <ComboBox BorderThickness="0" Background="{x:Null}" ItemsSource="{Binding ElementName=main,Path=ExitComs}" Foreground="#444444"
                                                           Name="com"
                                                            Width="130"
-                                                          VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
-                            </ComboBox>
+                                                          VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0,0,0,130.4"/>
 
-                            <Button
+            <Button
                                 Height="40"
                                 Margin="5,0,0,0"
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Top"
                                 Click="RefreshComs">
-                                <Button.Content>
-                                    <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\refresh.png" />
-                                </Button.Content>
-                            </Button>
+                <Button.Content>
+                    <Image Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\refresh.png" />
+                </Button.Content>
+            </Button>
 
-                            <TextBlock
+            <TextBlock
                                 Margin="40,0,0,0"
                                 VerticalAlignment="Top"
                                 Text="服务器:" />
-                            <TextBox
+            <TextBox
                                 Name="ipbox"
                                 Width="100"
                                 Margin="5,0,0,0"
@@ -279,7 +284,7 @@
                                 BorderThickness="0"
                                 FontSize="18"
                                 Text="127.0.0.1" />
-                            <TextBox
+            <TextBox
                                 Name="portbox"
                                 Width="100"
                                 Margin="5,0,0,0"
@@ -292,12 +297,13 @@
                                 BorderThickness="0"
                                 FontSize="18"
                                 Text="8787" />
-                        </StackPanel>
-
-                    </StackPanel>
-                   
-                </TabItem>
-                <TabItem Header="日志">
+        </StackPanel>
+    </Grid>
+    
+        </TabItem>
+    
+    
+        <TabItem Header="日志">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="30" />
@@ -329,19 +335,17 @@
                             </RichTextBox.Background>
                             <FlowDocument>
                                 <Paragraph Name="logBox">
-                                    <!--<Run Name="LogText" Text="" />
-                                <Run Text="" />-->
+
                                 </Paragraph>
                             </FlowDocument>
                         </RichTextBox>
                     </Grid>
                 </TabItem>
-
                 <TabItem Header="接口测试">
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition />
-                            <ColumnDefinition />
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="30" />
@@ -354,7 +358,7 @@
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
-                                        <RadioButton VerticalAlignment="Center" Content="{Binding Describe}">
+                                        <RadioButton VerticalAlignment="Center" Content="{Binding Key}">
                                             <RadioButton.IsChecked>
                                                 <Binding
                                                     Mode="TwoWay"
@@ -362,13 +366,13 @@
                                                     RelativeSource="{RelativeSource AncestorType=ListBoxItem}" />
                                             </RadioButton.IsChecked>
                                         </RadioButton>
-                                        <TextBlock VerticalAlignment="Center" Text="{Binding InterfaceName}" />
+                                        <TextBlock VerticalAlignment="Center" Text="" />
                                     </StackPanel>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
                         </ListBox>
                         <StackPanel Grid.Row="1" Grid.Column="1">
-                            <ListBox ItemsSource="{Binding ElementName=interfaceList, Path=SelectedItem.Paramters}">
+                            <ListBox ItemsSource="{Binding ElementName=interfaceList, Path=SelectedItem.Value.Paramters}">
                                 <ListBox.ItemTemplate>
                                     <DataTemplate>
                                         <Grid>
@@ -376,7 +380,7 @@
                                                 <ColumnDefinition Width="70" />
                                                 <ColumnDefinition Width="*" />
                                             </Grid.ColumnDefinitions>
-                                            <TextBlock VerticalAlignment="Center" Text="{Binding Path=Name}" />
+                                            <TextBlock VerticalAlignment="Center" Text="{Binding Path=ParameterName}" />
                                             <TextBox
                                                 Grid.Column="1"
                                                 Width="240"
@@ -524,5 +528,6 @@
             </controls:HamburgerMenu.ItemTemplate>
         </controls:HamburgerMenu>
     </Canvas>
+   
 </controls:MetroWindow>
 

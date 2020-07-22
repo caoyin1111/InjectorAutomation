@@ -1,0 +1,81 @@
+[2020/7/22 8:46:18 , Normal] ->  
+ [2020/7/22 9:15:21 , Normal] ->  
+ [2020/7/22 9:17:33 , Normal] ->  
+ [2020/7/22 9:36:40 , Normal] ->  
+ [2020/7/22 9:38:16 , Normal] ->  
+ [2020/7/22 9:47:00 , Normal] ->  
+ [2020/7/22 9:57:55 , Normal] ->  
+ [2020/7/22 10:03:33 , Normal] ->  
+ [2020/7/22 11:07:43 , Normal] ->  
+ [2020/7/22 12:45:05 , Normal] ->  
+ [2020/7/22 12:45:29 , Erro] -> 程序运行错误:System.FormatException: 输入字符串的格式不正确。
+   在 System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   在 System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   在 System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   在 System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   在 System.Convert.ChangeType(Object value, Type conversionType)
+   在 TaskInvokeLib.TaskInvoke.DoInterface(String url, DoTaskParameterItem parameterItem) 位置 F:\ctest\InjectorAutomation\InjectorAutomation\TaskInvokeLib\TaskInvoke.cs:行号 65
+   在 InjectorMainWindow.MainWindow.MoveA(Object sender, RoutedEventArgs e) 位置 F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\MainWindow.xaml.cs:行号 278
+   在 System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   在 System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   在 System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   在 System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   在 System.Windows.Controls.Primitives.ButtonBase.OnClick()
+   在 System.Windows.Controls.Button.OnClick()
+   在 System.Windows.Controls.Primitives.ButtonBase.OnMouseLeftButtonUp(MouseButtonEventArgs e)
+   在 System.Windows.UIElement.OnMouseLeftButtonUpThunk(Object sender, MouseButtonEventArgs e)
+   在 System.Windows.Input.MouseButtonEventArgs.InvokeEventHandler(Delegate genericHandler, Object genericTarget)
+   在 System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)
+   在 System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   在 System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   在 System.Windows.UIElement.ReRaiseEventAs(DependencyObject sender, RoutedEventArgs args, RoutedEvent newEvent)
+   在 System.Windows.UIElement.OnMouseUpThunk(Object sender, MouseButtonEventArgs e)
+   在 System.Windows.Input.MouseButtonEventArgs.InvokeEventHandler(Delegate genericHandler, Object genericTarget)
+   在 System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)
+   在 System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   在 System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   在 System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   在 System.Windows.UIElement.RaiseTrustedEvent(RoutedEventArgs args)
+   在 System.Windows.UIElement.RaiseEvent(RoutedEventArgs args, Boolean trusted)
+   在 System.Windows.Input.InputManager.ProcessStagingArea()
+   在 System.Windows.Input.InputManager.ProcessInput(InputEventArgs input)
+   在 System.Windows.Input.InputProviderSite.ReportInput(InputReport inputReport)
+   在 System.Windows.Interop.HwndMouseInputProvider.ReportInput(IntPtr hwnd, InputMode mode, Int32 timestamp, RawMouseActions actions, Int32 x, Int32 y, Int32 wheel)
+   在 System.Windows.Interop.HwndMouseInputProvider.FilterMessage(IntPtr hwnd, WindowMessage msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   在 System.Windows.Interop.HwndSource.InputFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   在 MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   在 MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   在 System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   在 System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   在 System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   在 MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   在 MS.Win32.UnsafeNativeMethods.DispatchMessage(MSG& msg)
+   在 System.Windows.Threading.Dispatcher.PushFrameImpl(DispatcherFrame frame)
+   在 System.Windows.Threading.Dispatcher.PushFrame(DispatcherFrame frame)
+   在 System.Windows.Window.ShowHelper(Object booleanBox)
+   在 System.Windows.Window.Show()
+   在 System.Windows.Window.ShowDialog()
+   在 InjectorMainWindow.MainWindow.ShowWindow() 位置 F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\MainWindow.xaml.cs:行号 156
+   在 InjectorAutomation.Program.Main(String[] args) 位置 F:\ctest\InjectorAutomation\InjectorAutomation\InjectorAutomation\Program.cs:行号 81 
+ [2020/7/22 12:45:34 , Normal] ->  
+ [2020/7/22 12:53:14 , Normal] ->  
+ [2020/7/22 12:56:39 , Normal] ->  
+ [2020/7/22 14:16:02 , Normal] ->  
+ [2020/7/22 14:17:03 , Normal] ->  
+ [2020/7/22 15:29:13 , Normal] ->  
+ [2020/7/22 15:29:48 , Normal] ->  
+ [2020/7/22 15:30:41 , Normal] ->  
+ [2020/7/22 15:31:48 , Normal] ->  
+ [2020/7/22 15:37:56 , Normal] ->  
+ [2020/7/22 15:42:34 , Normal] ->  
+ [2020/7/22 15:45:05 , Normal] ->  
+ [2020/7/22 15:55:51 , Normal] ->  
+ [2020/7/22 15:56:13 , Normal] ->  
+ [2020/7/22 16:07:04 , Normal] ->  
+ [2020/7/22 16:08:02 , Normal] ->  
+ [2020/7/22 16:56:10 , Normal] ->  
+ [2020/7/22 17:05:16 , Normal] ->  
+ [2020/7/22 17:14:42 , Normal] ->  
+ [2020/7/22 17:16:35 , Normal] ->  
+ [2020/7/22 17:18:29 , Normal] ->  
+ 

@@ -11,6 +11,9 @@ namespace ControlLib
 {
     public class ControlCom : IControl
     {
+        /// <summary>
+        /// 日志
+        /// </summary>
         public ILog Log { get; set; }
         /// <summary>
         /// 串口
@@ -148,6 +151,15 @@ namespace ControlLib
             }
             isReceiveOk = true;
         }
+
+        /// <summary>
+        /// 初始化
+        /// </summary>
+        /// <param name="portName"></param>
+        /// <param name="bandRoate"></param>
+        /// <param name="parity"></param>
+        /// <param name="dataP"></param>
+        /// <param name="stopBits"></param>
         public void Init(string portName,int bandRoate,Parity parity,int dataP,StopBits stopBits)
         {
             this.PortName = portName;
