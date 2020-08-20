@@ -1,0 +1,11 @@
+[2020/8/17 17:15:21 , Erro] -> 连接失败System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 InjectorMainWindow.MainWindow.Link(Object sender, MouseButtonEventArgs e) 位置 F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\MainWindow.xaml.cs:行号 168 
+ [2020/8/17 17:17:34 , Normal] -> 添加路由! 
+ [2020/8/17 17:17:35 , Normal] -> 服务器启动成功 
+ [2020/8/17 17:17:36 , Normal] -> 绑定设备数据接收! 
+ [2020/8/17 17:17:36 , Normal] -> 连接控制成功 
+ [2020/8/17 17:31:53 , Normal] -> 添加路由! 
+ [2020/8/17 17:31:53 , Normal] -> 服务器启动成功 
+ [2020/8/17 17:31:53 , Normal] -> 绑定设备数据接收! 
+ [2020/8/17 17:31:53 , Normal] -> 连接控制成功 
+ 

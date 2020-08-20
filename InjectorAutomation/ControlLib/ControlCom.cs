@@ -1,4 +1,8 @@
-﻿using Interfaces.Interfaces;
+﻿using Interfaces.Enums;
+using Interfaces.Expends;
+using Interfaces.Interfaces;
+using SerialControlLib;
+using SerialControlLib.Items;
 using System;
 using System.Collections.Generic;
 using System.IO.Ports;
@@ -18,7 +22,7 @@ namespace ControlLib
         /// <summary>
         /// 串口
         /// </summary>
-        private SerialPort port = new SerialPort();
+        private SerialControl SerialControl { get; set; } = new SerialControl();
         /// <summary>
         /// 串口名
         /// </summary>
@@ -43,114 +47,48 @@ namespace ControlLib
         /// 接收的数据
         /// </summary>
         private List<byte> recData = new List<byte>();
-        /// <summary>
-        /// 是否成功接收数据
-        /// </summary>
-        private bool isReceiveOk = false;
 
+        /// <summary>
+        /// 关闭
+        /// </summary>
         public void Close()
         {
-            if(port!=null &&port.IsOpen)
+            try
             {
-                port.Close();
-                Log.log("控制板关闭");
+                SerialControl.Close();
+                SerialControl.Dispose();
+                SerialControl = null;
             }
+            catch(Exception ex)
+            {
+                Log.error("关闭串口失败", ex);
+            }
+            finally
+            {
+                SerialControl = new SerialControl();
+            }
+        
         }
-        /// <summary>
-        /// 释放
-        /// </summary>
-        public void Dispose()
-        {
-            Close();
-            port.Dispose();
-            port = null;
-        }
-        /// <summary>
-        /// 发送命令
-        /// </summary>
-        /// <param name="msg"></param>
-        /// <returns></returns>
-        protected bool Send(byte[] msg)
-        {
-            recData.Clear();
-            byte[] sendMsg = new byte[msg.Length + 1];
-            byte all = 0;
-            string sends = "";
-            for(int i=0;i<msg.Length;i++)
-            {
-                all += msg[i];
-                sends += msg[i].ToString() + "_";
-                sendMsg[i] = msg[i];
-            }
-            sendMsg[msg.Length] = all;
-            sends += all.ToString();
-            Log.log("发送数据:", sends);
-            sends = null;
-            isReceiveOk = false;
-            port.Write(sendMsg, 0, sendMsg.Length);
-            DateTime now = DateTime.Now;
-            while(!isReceiveOk&&(DateTime.Now-now).TotalSeconds<10)
-            {
-                Thread.Sleep(100);
-            }
-            if(isReceiveOk == false)
-            {
-                Log.log("接受数据超时");
-                throw new Exception("接收数据超时");
-
-            }
-            string receive = "";
-            foreach(var data in recData)
-            {
-                receive += data.ToString() + "_";
-
-            }
-            Log.log("接收数据：", receive);
-            return isReceiveOk;
-
-        }
+       
         /// <summary>
         /// 打开
         /// </summary>
         public void Open()
         {
-            if (!port.IsOpen)
+            if(SerialControl.IsOpen)
             {
-                port.PortName = this.PortName;
-                port.BaudRate = this.BandRoate;
-                port.Parity = this.Parity;
-                port.DataBits = this.DataP;
-                port.StopBits = this.StopBit;
-                port.Open();
-                this.port.DataReceived += SeriPortReceiveData;
-                Log.log("绑定设备数据接收!");
+                Close();
             }
-            else
-            {
-                port.Close();
-                port.PortName = this.PortName;
-                port.BaudRate = this.BandRoate;
-                port.Parity = this.Parity;
-                port.DataBits = this.DataP;
-                port.StopBits = this.StopBit;
-                port.Open();
-            }
+            SerialControl.Parity = Parity;
+            SerialControl.BaudRate = BandRoate;
+            SerialControl.StopBits = StopBit;
+            SerialControl.PortName = PortName;
+            SerialControl.DataBits = DataP;
+            SerialControl.Head = 0xee;
+            SerialControl.End = 0xff;
+            SerialControl.Open();
         }
-        /// <summary>
-        /// 串口数据回调
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void SeriPortReceiveData(object sender, SerialDataReceivedEventArgs e)
-        {
-            byte[] buffer = new byte[port.BytesToRead];
-            port.Read(buffer, 0, buffer.Length);
-            foreach(var item in buffer)
-            {
-                recData.Add(item);
-            }
-            isReceiveOk = true;
-        }
+       
 
         /// <summary>
         /// 初始化
@@ -168,5 +106,45 @@ namespace ControlLib
             this.DataP = dataP;
             this.StopBit = stopBits;
         }
+        /// <summary>
+        /// 发送数据
+        /// </summary>
+        /// <param name="command"></param>
+        /// <param name="datas"></param>
+        /// <returns></returns>
+        private SerialResponse Send(Commands command,List<byte> datas)
+        {
+            SerialRequest serialRequest = SerialControl.CreateRequest();
+            serialRequest.SetData((byte)command, datas);
+            SerialResponse response = SerialControl.Send(serialRequest);
+            if (response.SourceDatas == null || response.SourceDatas.Count() == 0)
+            {
+                throw new Exception("异常，为接收到任何数据!");
+            }
+            if (response.UserDatas[0] != 0x00)
+            {
+                throw new Exception(string.Format("操作命令异常 : 命令关键字 - {0}, 错误吗 - {1}, 实际接收的全部数据 - {2}"
+                    , serialRequest.KeyWorld.ToString("x2"), response.UserDatas[0].ToString("x2"), response.SourceDatas.JoinToString(",", b =>
+                         b.ToString("X2")
+                    )));
+            }
+            else
+            {
+                Log.log("接受数据 : ", response.SourceDatas.JoinToString(",", b =>
+                        b.ToString("X2")
+                    ));
+                return response;
+            }
+        }
+        public bool MoveHorizontalRightA(int distance)
+        {
+            SerialResponse re = Send(Commands.Init, new List<byte>() { (byte)distance });
+            if(re == null)
+            {
+                return false;
+            }
+            return re.UserDatas[1] == 1;
+        }
+
     }
 }

@@ -144,9 +144,8 @@ namespace TaskInvokeLib
                 Log.log("添加路由!");
                 ServerStation.Start(ip, port);
                 Log.log("服务器启动成功");
-                ControlCom.Init(Coms[0].Value, Convert.ToInt32(StaticParameter.GetValue("Control.BandRote")),
-
-                    System.IO.Ports.Parity.None, Convert.ToInt32(StaticParameter.GetValue("Control.DataBits")), System.IO.Ports.StopBits.One);
+                ControlCom.Init(Coms[0].Value, Convert.ToInt32(StaticParameter.GetValue("Control.BandRate")),
+                System.IO.Ports.Parity.None, Convert.ToInt32(StaticParameter.GetValue("Control.DataBits")), System.IO.Ports.StopBits.One);
                 ControlCom.Open();
                 Log.log("连接控制成功");
             }

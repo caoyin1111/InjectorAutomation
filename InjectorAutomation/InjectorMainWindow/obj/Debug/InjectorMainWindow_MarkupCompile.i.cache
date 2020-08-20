@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 
-11151548125
+3-1260861683
 
 7-1745617964
 23289122875
-MainWindow.xaml;
+MainWindow.xaml;Resources\Icons.xaml;Resources\IconsNonShared.xaml;
 
-True
+False
 

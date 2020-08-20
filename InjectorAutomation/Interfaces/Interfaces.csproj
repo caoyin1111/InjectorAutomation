@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Attributes\RouteAttribute.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="Enums\Commands.cs" />
     <Compile Include="Enums\LogType.cs" />
     <Compile Include="Expends\Expends.cs" />
     <Compile Include="Interfaces\IControl.cs" />

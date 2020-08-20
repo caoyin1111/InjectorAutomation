@@ -47,9 +47,9 @@ namespace InjectorMainWindow
         /// </summary>
         private ObservableCollection<MItem> MenuItems = new ObservableCollection<MItem>()
         {
-            new MItem(){ Icon = @"F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\home.png", MenuName="首页"},
-            new MItem(){ Icon = @"F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\log.png", MenuName="日志"},
-            new MItem(){ Icon = @"F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\api.png", MenuName="接口测试"},
+            new MItem(){ Icon = @"Resources\home.png", MenuName="首页"},
+            new MItem(){ Icon = @"Resources\log.png", MenuName="日志"},
+            new MItem(){ Icon = @"Resources\api.png", MenuName="接口测试"},
         };
         /// <summary>
         /// 普通日志
@@ -81,9 +81,6 @@ namespace InjectorMainWindow
             Log.LogCallBack += LogMsg;
             pages.SelectedIndex = 0;
             leftMenus.SelectedIndex = 0;
-
-
- 
         }
 
         /// <summary>
@@ -168,7 +165,7 @@ namespace InjectorMainWindow
         {
             try
             {
-                //TaskInoke.Coms[0].Value = com.SelectedItem.ToString();
+                TaskInoke.Coms[0].Value = com.SelectedItem.ToString();
                 TaskInoke.Link(ipbox.Text, Convert.ToInt32(portbox.Text));
             }
             catch(Exception ex)
@@ -280,7 +277,7 @@ namespace InjectorMainWindow
             Dictionary<string, DoTaskParameterItem> keys = TaskInoke.GetInterfaces();
             foreach(var item in keys)
             {
-                if(item.Key.Contains("movehorizontalA"))
+                if(item.Key.Contains("movehorizontalrightA"))
                 {
                     doTaskParameter = item.Value;
                     doTaskParameter.Paramters[0].Value = distance.ToString();
@@ -305,7 +302,7 @@ namespace InjectorMainWindow
             Dictionary<string, DoTaskParameterItem> keys = TaskInoke.GetInterfaces();
             foreach (var item in keys)
             {
-                if(item.Key.Contains("movehorizontalB"))
+                if(item.Key.Contains("movehorizontalrightB"))
                 {
                     doTaskParameter = item.Value;
                     doTaskParameter.Paramters[0].Value = distance.ToString();
@@ -364,6 +361,167 @@ namespace InjectorMainWindow
             foreach (var item in keys)
             {
                 if (item.Key.Contains("vectrialtozero"))
+                {
+                    doTaskParameter = item.Value;
+
+                    TaskInoke.DoInterface(doTaskParameter.Url, doTaskParameter);
+                    break;
+                }
+            }
+        }
+        /// <summary>
+        /// 电动夹爪A放大
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ExpendA(object sender, RoutedEventArgs e)
+        {
+            DoTaskParameterItem doTaskParameter = null;
+            Dictionary<string, DoTaskParameterItem> keys = TaskInoke.GetInterfaces();
+            foreach (var item in keys)
+            {
+                if (item.Key.Contains("expendA"))
+                {
+                    doTaskParameter = item.Value;
+
+                    TaskInoke.DoInterface(doTaskParameter.Url, doTaskParameter);
+                    break;
+                }
+            }
+        }
+        /// <summary>
+        /// 电动夹爪A缩小
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ShrinkA(object sender, RoutedEventArgs e)
+        {
+            DoTaskParameterItem doTaskParameter = null;
+            Dictionary<string, DoTaskParameterItem> keys = TaskInoke.GetInterfaces();
+            foreach (var item in keys)
+            {
+                if (item.Key.Contains("shrinkA"))
+                {
+                    doTaskParameter = item.Value;
+
+                    TaskInoke.DoInterface(doTaskParameter.Url, doTaskParameter);
+                    break;
+                }
+            }
+        }
+        /// <summary>
+        /// 电动夹爪B放大
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ExpendB(object sender, RoutedEventArgs e)
+        {
+            DoTaskParameterItem doTaskParameter = null;
+            Dictionary<string, DoTaskParameterItem> keys = TaskInoke.GetInterfaces();
+            foreach (var item in keys)
+            {
+                if (item.Key.Contains("expendB"))
+                {
+                    doTaskParameter = item.Value;
+
+                    TaskInoke.DoInterface(doTaskParameter.Url, doTaskParameter);
+                    break;
+                }
+            }
+        }
+        /// <summary>
+        /// 电动夹爪B缩小
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ShrinkB(object sender, RoutedEventArgs e)
+        {
+            DoTaskParameterItem doTaskParameter = null;
+            Dictionary<string, DoTaskParameterItem> keys = TaskInoke.GetInterfaces();
+            foreach (var item in keys)
+            {
+                if (item.Key.Contains("shrinkB"))
+                {
+                    doTaskParameter = item.Value;
+
+                    TaskInoke.DoInterface(doTaskParameter.Url, doTaskParameter);
+                    break;
+                }
+            }
+        }
+        /// <summary>
+        /// 平台A向左移动
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MoveLeftA(object sender, RoutedEventArgs e)
+        {
+            DoTaskParameterItem doTaskParameter = null;
+            Dictionary<string, DoTaskParameterItem> keys = TaskInoke.GetInterfaces();
+            foreach (var item in keys)
+            {
+                if (item.Key.Contains("movehorizontalleftA"))
+                {
+                    doTaskParameter = item.Value;
+
+                    TaskInoke.DoInterface(doTaskParameter.Url, doTaskParameter);
+                    break;
+                }
+            }
+        }
+        /// <summary>
+        /// 平台B向左移动
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MoveLeftB(object sender, RoutedEventArgs e)
+        {
+            DoTaskParameterItem doTaskParameter = null;
+            Dictionary<string, DoTaskParameterItem> keys = TaskInoke.GetInterfaces();
+            foreach (var item in keys)
+            {
+                if (item.Key.Contains("movehorizontalleftB"))
+                {
+                    doTaskParameter = item.Value;
+
+                    TaskInoke.DoInterface(doTaskParameter.Url, doTaskParameter);
+                    break;
+                }
+            }
+        }
+        /// <summary>
+        /// 垂直轴向上移动
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MoveUp(object sender, RoutedEventArgs e)
+        {
+            DoTaskParameterItem doTaskParameter = null;
+            Dictionary<string, DoTaskParameterItem> keys = TaskInoke.GetInterfaces();
+            foreach (var item in keys)
+            {
+                if (item.Key.Contains("movevectrialup"))
+                {
+                    doTaskParameter = item.Value;
+
+                    TaskInoke.DoInterface(doTaskParameter.Url, doTaskParameter);
+                    break;
+                }
+            }
+
+        }
+        /// <summary>
+        /// 垂直轴向下移动
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MoveDown(object sender, RoutedEventArgs e)
+        {
+            DoTaskParameterItem doTaskParameter = null;
+            Dictionary<string, DoTaskParameterItem> keys = TaskInoke.GetInterfaces();
+            foreach (var item in keys)
+            {
+                if (item.Key.Contains("movevectrialdown"))
                 {
                     doTaskParameter = item.Value;
 

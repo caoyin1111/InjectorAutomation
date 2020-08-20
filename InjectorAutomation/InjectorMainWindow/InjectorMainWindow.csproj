@@ -90,15 +90,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <None Include="Resources\Entypo.ttf" />
-    <None Include="Resources\Icons.xaml">
+    <Resource Include="Resources\Entypo.ttf" />
+    <Page Include="Resources\Icons.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Resources\IconsNonShared.xaml">
+    </Page>
+    <Page Include="Resources\IconsNonShared.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </None>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -116,79 +116,85 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\add.png" />
+    <Resource Include="Resources\add.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\api.png" />
+    <Resource Include="Resources\api.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\camera.png" />
+    <Resource Include="Resources\camera.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\chart.png" />
+    <Resource Include="Resources\chart.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\deviceconfig.png" />
+    <Resource Include="Resources\deviceconfig.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\dialog.png" />
+    <Resource Include="Resources\dialog.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\dislink.png" />
+    <Resource Include="Resources\dislink.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\down.png" />
+    <Resource Include="Resources\down.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\fingerset.png" />
+    <Resource Include="Resources\fingerset.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\home.png" />
+    <Resource Include="Resources\home.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\left.png" />
+    <Resource Include="Resources\left.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\link.png" />
+    <Resource Include="Resources\link.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\load.png" />
+    <Resource Include="Resources\load.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\log.jpg" />
+    <Resource Include="Resources\log.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\log.png" />
+    <Resource Include="Resources\log.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\move.png" />
+    <Resource Include="Resources\move.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\refresh.png" />
+    <Resource Include="Resources\refresh.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\remove.png" />
+    <Resource Include="Resources\remove.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\rest.png" />
+    <Resource Include="Resources\rest.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\restfinger.png" />
+    <Resource Include="Resources\restfinger.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\right.png" />
+    <Resource Include="Resources\right.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\up.png" />
+    <Resource Include="Resources\up.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\upload.png" />
+    <Resource Include="Resources\upload.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Entypo-license.txt" />
+    <Resource Include="Resources\Entypo-license.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\WindowsIcons-license.txt" />
+    <Resource Include="Resources\WindowsIcons-license.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\kuoda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\suoxiao.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

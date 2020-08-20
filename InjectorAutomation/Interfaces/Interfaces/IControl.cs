@@ -20,10 +20,7 @@ namespace Interfaces.Interfaces
         /// 关闭
         /// </summary>
         void Close();
-        /// <summary>
-        /// 释放
-        /// </summary>
-        void Dispose();
+  
         void Init(string portName, int bandRoate, Parity parity, int dataP, StopBits stopBits);
     }
 }
