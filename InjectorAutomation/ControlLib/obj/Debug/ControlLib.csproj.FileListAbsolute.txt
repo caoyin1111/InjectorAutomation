@@ -7,5 +7,5 @@ F:\ctest\InjectorAutomation\InjectorAutomation\ControlLib\bin\Debug\Newtonsoft.J
 F:\ctest\InjectorAutomation\InjectorAutomation\ControlLib\obj\Debug\ControlLib.csproj.CopyComplete
 F:\ctest\InjectorAutomation\InjectorAutomation\ControlLib\obj\Debug\ControlLib.dll
 F:\ctest\InjectorAutomation\InjectorAutomation\ControlLib\obj\Debug\ControlLib.pdb
-F:\ctest\InjectorAutomation\InjectorAutomation\ControlLib\obj\Debug\ControlLib.csprojAssemblyReference.cache
 F:\ctest\InjectorAutomation\InjectorAutomation\ControlLib\bin\Debug\SerialControlLib.dll
+F:\ctest\InjectorAutomation\InjectorAutomation\ControlLib\obj\Debug\ControlLib.csprojAssemblyReference.cache

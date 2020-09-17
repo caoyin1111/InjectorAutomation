@@ -35,5 +35,11 @@ namespace Interfaces.Interfaces
         /// 串口组
         /// </summary>
         List<KeyValueItem<string, string>> Coms { get; }
+        int GetMoveA();
+        int GetMoveB();
+        int GetVertical();
+        int GetMoClampA();
+        int GetMoClampB();
+        bool ControlSp(string sta);
     }
 }

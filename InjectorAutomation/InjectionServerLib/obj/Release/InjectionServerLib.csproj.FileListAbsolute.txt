@@ -1,0 +1,13 @@
+F:\ctest\InjectorAutomation\InjectorAutomation\InjectionServerLib\bin\Release\InjectionServerLib.dll
+F:\ctest\InjectorAutomation\InjectorAutomation\InjectionServerLib\bin\Release\InjectionServerLib.pdb
+F:\ctest\InjectorAutomation\InjectorAutomation\InjectionServerLib\bin\Release\Autofac.dll
+F:\ctest\InjectorAutomation\InjectorAutomation\InjectionServerLib\bin\Release\Interfaces.dll
+F:\ctest\InjectorAutomation\InjectorAutomation\InjectionServerLib\bin\Release\Newtonsoft.Json.dll
+F:\ctest\InjectorAutomation\InjectorAutomation\InjectionServerLib\bin\Release\Interfaces.pdb
+F:\ctest\InjectorAutomation\InjectorAutomation\InjectionServerLib\bin\Release\Autofac.pdb
+F:\ctest\InjectorAutomation\InjectorAutomation\InjectionServerLib\bin\Release\Autofac.xml
+F:\ctest\InjectorAutomation\InjectorAutomation\InjectionServerLib\bin\Release\Newtonsoft.Json.xml
+F:\ctest\InjectorAutomation\InjectorAutomation\InjectionServerLib\obj\Release\InjectionServerLib.csprojAssemblyReference.cache
+F:\ctest\InjectorAutomation\InjectorAutomation\InjectionServerLib\obj\Release\InjectionServerLib.csproj.CopyComplete
+F:\ctest\InjectorAutomation\InjectorAutomation\InjectionServerLib\obj\Release\InjectionServerLib.dll
+F:\ctest\InjectorAutomation\InjectorAutomation\InjectionServerLib\obj\Release\InjectionServerLib.pdb

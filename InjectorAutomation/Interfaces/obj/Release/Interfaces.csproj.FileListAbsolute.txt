@@ -1,0 +1,9 @@
+F:\ctest\InjectorAutomation\InjectorAutomation\Interfaces\bin\Release\Interfaces.dll
+F:\ctest\InjectorAutomation\InjectorAutomation\Interfaces\bin\Release\Interfaces.pdb
+F:\ctest\InjectorAutomation\InjectorAutomation\Interfaces\bin\Release\Newtonsoft.Json.dll
+F:\ctest\InjectorAutomation\InjectorAutomation\Interfaces\bin\Release\Newtonsoft.Json.xml
+F:\ctest\InjectorAutomation\InjectorAutomation\Interfaces\obj\Release\Interfaces.csproj.Fody.CopyLocal.cache
+F:\ctest\InjectorAutomation\InjectorAutomation\Interfaces\obj\Release\Interfaces.csproj.CopyComplete
+F:\ctest\InjectorAutomation\InjectorAutomation\Interfaces\obj\Release\Interfaces.dll
+F:\ctest\InjectorAutomation\InjectorAutomation\Interfaces\obj\Release\Interfaces.pdb
+F:\ctest\InjectorAutomation\InjectorAutomation\Interfaces\obj\Release\Interfaces.csprojAssemblyReference.cache

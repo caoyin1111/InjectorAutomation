@@ -1,0 +1,208 @@
+[2020/8/21 13:37:21 , Normal] ->  
+ [2020/8/21 13:40:41 , Normal] ->  
+ [2020/8/21 13:41:49 , Normal] ->  
+ [2020/8/21 13:42:55 , Normal] ->  
+ [2020/8/21 16:38:13 , Normal] ->  
+ [2020/8/21 16:43:11 , Normal] ->  
+ [2020/8/21 16:44:13 , Normal] ->  
+ [2020/8/21 17:53:35 , Normal] ->  
+ [2020/8/21 18:03:26 , Normal] ->  
+ [2020/8/21 18:08:54 , Normal] ->  
+ [2020/8/21 18:13:24 , Normal] ->  
+ [2020/8/21 18:14:25 , Normal] ->  
+ [2020/8/21 18:17:57 , Normal] ->  
+ [2020/8/21 18:23:38 , Normal] ->  
+ [2020/8/21 18:26:21 , Normal] ->  
+ [2020/8/21 18:29:29 , Normal] ->  
+ [2020/8/21 18:31:29 , Normal] ->  
+ [2020/8/21 18:39:36 , Normal] ->  
+ [2020/8/21 18:41:02 , Normal] ->  
+ [2020/8/21 18:46:47 , Normal] ->  
+ [2020/8/21 18:59:49 , Normal] ->  
+ [2020/8/21 19:03:10 , Normal] ->  
+ [2020/8/21 19:06:54 , Normal] ->  
+ [2020/8/21 19:15:30 , Normal] ->  
+ [2020/8/21 19:22:02 , Normal] ->  
+ [2020/8/21 19:22:41 , Normal] ->  
+ [2020/8/21 19:52:26 , Normal] ->  
+ [2020/8/21 19:59:03 , Normal] ->  
+ [2020/8/21 20:02:23 , Normal] ->  
+ [2020/8/21 20:04:26 , Normal] ->  
+ [2020/8/21 20:05:10 , Erro] -> 程序运行错误:System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.Write(Byte[] buffer, Int32 offset, Int32 count)
+   在 SerialControlLib.SerialControl.Send(SerialRequest request)
+   在 ControlLib.ControlCom.Send(Commands command, List`1 datas) 位置 F:\ctest\InjectorAutomation\InjectorAutomation\ControlLib\ControlCom.cs:行号 119
+   在 ControlLib.ControlCom.RefreshElectricA() 位置 F:\ctest\InjectorAutomation\InjectorAutomation\ControlLib\ControlCom.cs:行号 254
+   在 TaskInvokeLib.TaskInvoke.HorizontalAToZero() 位置 F:\ctest\InjectorAutomation\InjectorAutomation\TaskInvokeLib\TaskInvoke.Interface.cs:行号 73
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   在 System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   在 System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   在 System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   在 TaskInvokeLib.TaskInvoke.DoInterface(String url, DoTaskParameterItem parameterItem) 位置 F:\ctest\InjectorAutomation\InjectorAutomation\TaskInvokeLib\TaskInvoke.cs:行号 85
+   在 InjectorMainWindow.MainWindow.RefreshA(Object sender, RoutedEventArgs e) 位置 F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\MainWindow.xaml.cs:行号 328
+   在 System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   在 System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   在 System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   在 System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   在 System.Windows.Controls.Primitives.ButtonBase.OnClick()
+   在 System.Windows.Controls.Button.OnClick()
+   在 System.Windows.Controls.Primitives.ButtonBase.OnMouseLeftButtonUp(MouseButtonEventArgs e)
+   在 System.Windows.UIElement.OnMouseLeftButtonUpThunk(Object sender, MouseButtonEventArgs e)
+   在 System.Windows.Input.MouseButtonEventArgs.InvokeEventHandler(Delegate genericHandler, Object genericTarget)
+   在 System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)
+   在 System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   在 System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   在 System.Windows.UIElement.ReRaiseEventAs(DependencyObject sender, RoutedEventArgs args, RoutedEvent newEvent)
+   在 System.Windows.UIElement.OnMouseUpThunk(Object sender, MouseButtonEventArgs e)
+   在 System.Windows.Input.MouseButtonEventArgs.InvokeEventHandler(Delegate genericHandler, Object genericTarget)
+   在 System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)
+   在 System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   在 System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   在 System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   在 System.Windows.UIElement.RaiseTrustedEvent(RoutedEventArgs args)
+   在 System.Windows.UIElement.RaiseEvent(RoutedEventArgs args, Boolean trusted)
+   在 System.Windows.Input.InputManager.ProcessStagingArea()
+   在 System.Windows.Input.InputManager.ProcessInput(InputEventArgs input)
+   在 System.Windows.Input.InputProviderSite.ReportInput(InputReport inputReport)
+   在 System.Windows.Interop.HwndMouseInputProvider.ReportInput(IntPtr hwnd, InputMode mode, Int32 timestamp, RawMouseActions actions, Int32 x, Int32 y, Int32 wheel)
+   在 System.Windows.Interop.HwndMouseInputProvider.FilterMessage(IntPtr hwnd, WindowMessage msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   在 System.Windows.Interop.HwndSource.InputFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   在 MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   在 MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   在 System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   在 System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   在 System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   在 MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   在 MS.Win32.UnsafeNativeMethods.DispatchMessage(MSG& msg)
+   在 System.Windows.Threading.Dispatcher.PushFrameImpl(DispatcherFrame frame)
+   在 System.Windows.Threading.Dispatcher.PushFrame(DispatcherFrame frame)
+   在 System.Windows.Window.ShowHelper(Object booleanBox)
+   在 System.Windows.Window.Show()
+   在 System.Windows.Window.ShowDialog()
+   在 InjectorMainWindow.MainWindow.ShowWindow() 位置 F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\MainWindow.xaml.cs:行号 152
+   在 InjectorAutomation.Program.Main(String[] args) 位置 F:\ctest\InjectorAutomation\InjectorAutomation\InjectorAutomation\Program.cs:行号 81 
+ [2020/8/21 20:05:17 , Normal] ->  
+ [2020/8/21 20:07:45 , Normal] ->  
+ [2020/8/21 20:09:21 , Normal] ->  
+ [2020/8/21 20:11:32 , Normal] ->  
+ [2020/8/21 20:23:12 , Normal] ->  
+ [2020/8/21 20:28:23 , Normal] ->  
+ [2020/8/21 20:30:16 , Normal] ->  
+ [2020/8/21 20:31:17 , Erro] -> 程序运行错误:System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.Exception: 操作命令异常 : 命令关键字 - 01, 错误吗 - e1, 实际接收的全部数据 - EE,01,01,E1,D1,FF,
+   在 ControlLib.ControlCom.Send(Commands command, List`1 datas) 位置 F:\ctest\InjectorAutomation\InjectorAutomation\ControlLib\ControlCom.cs:行号 126
+   在 ControlLib.ControlCom.MoveElectricClampB(Int32 distance) 位置 F:\ctest\InjectorAutomation\InjectorAutomation\ControlLib\ControlCom.cs:行号 211
+   在 TaskInvokeLib.TaskInvoke.ShrinkB(Int32 distance) 位置 F:\ctest\InjectorAutomation\InjectorAutomation\TaskInvokeLib\TaskInvoke.Interface.cs:行号 103
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   在 System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   在 System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   在 System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   在 TaskInvokeLib.TaskInvoke.DoInterface(String url, DoTaskParameterItem parameterItem) 位置 F:\ctest\InjectorAutomation\InjectorAutomation\TaskInvokeLib\TaskInvoke.cs:行号 85
+   在 InjectorMainWindow.MainWindow.ShrinkB(Object sender, RoutedEventArgs e) 位置 F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\MainWindow.xaml.cs:行号 448
+   在 System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   在 System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   在 System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   在 System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   在 System.Windows.Controls.Primitives.ButtonBase.OnClick()
+   在 System.Windows.Controls.Button.OnClick()
+   在 System.Windows.Controls.Primitives.ButtonBase.OnMouseLeftButtonUp(MouseButtonEventArgs e)
+   在 System.Windows.UIElement.OnMouseLeftButtonUpThunk(Object sender, MouseButtonEventArgs e)
+   在 System.Windows.Input.MouseButtonEventArgs.InvokeEventHandler(Delegate genericHandler, Object genericTarget)
+   在 System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)
+   在 System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   在 System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   在 System.Windows.UIElement.ReRaiseEventAs(DependencyObject sender, RoutedEventArgs args, RoutedEvent newEvent)
+   在 System.Windows.UIElement.OnMouseUpThunk(Object sender, MouseButtonEventArgs e)
+   在 System.Windows.Input.MouseButtonEventArgs.InvokeEventHandler(Delegate genericHandler, Object genericTarget)
+   在 System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)
+   在 System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   在 System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   在 System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   在 System.Windows.UIElement.RaiseTrustedEvent(RoutedEventArgs args)
+   在 System.Windows.UIElement.RaiseEvent(RoutedEventArgs args, Boolean trusted)
+   在 System.Windows.Input.InputManager.ProcessStagingArea()
+   在 System.Windows.Input.InputManager.ProcessInput(InputEventArgs input)
+   在 System.Windows.Input.InputProviderSite.ReportInput(InputReport inputReport)
+   在 System.Windows.Interop.HwndMouseInputProvider.ReportInput(IntPtr hwnd, InputMode mode, Int32 timestamp, RawMouseActions actions, Int32 x, Int32 y, Int32 wheel)
+   在 System.Windows.Interop.HwndMouseInputProvider.FilterMessage(IntPtr hwnd, WindowMessage msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   在 System.Windows.Interop.HwndSource.InputFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   在 MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   在 MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   在 System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   在 System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   在 System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   在 MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   在 MS.Win32.UnsafeNativeMethods.DispatchMessage(MSG& msg)
+   在 System.Windows.Threading.Dispatcher.PushFrameImpl(DispatcherFrame frame)
+   在 System.Windows.Threading.Dispatcher.PushFrame(DispatcherFrame frame)
+   在 System.Windows.Window.ShowHelper(Object booleanBox)
+   在 System.Windows.Window.Show()
+   在 System.Windows.Window.ShowDialog()
+   在 InjectorMainWindow.MainWindow.ShowWindow() 位置 F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\MainWindow.xaml.cs:行号 152
+   在 InjectorAutomation.Program.Main(String[] args) 位置 F:\ctest\InjectorAutomation\InjectorAutomation\InjectorAutomation\Program.cs:行号 81 
+ [2020/8/21 20:31:24 , Normal] ->  
+ [2020/8/21 20:31:38 , Erro] -> 程序运行错误:System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.InvalidOperationException: 端口被关闭。
+   在 System.IO.Ports.SerialPort.Write(Byte[] buffer, Int32 offset, Int32 count)
+   在 SerialControlLib.SerialControl.Send(SerialRequest request)
+   在 ControlLib.ControlCom.Send(Commands command, List`1 datas) 位置 F:\ctest\InjectorAutomation\InjectorAutomation\ControlLib\ControlCom.cs:行号 119
+   在 ControlLib.ControlCom.GetElectricClampB() 位置 F:\ctest\InjectorAutomation\InjectorAutomation\ControlLib\ControlCom.cs:行号 260
+   在 TaskInvokeLib.TaskInvoke.ShrinkB(Int32 distance) 位置 F:\ctest\InjectorAutomation\InjectorAutomation\TaskInvokeLib\TaskInvoke.Interface.cs:行号 101
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   在 System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   在 System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   在 System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   在 TaskInvokeLib.TaskInvoke.DoInterface(String url, DoTaskParameterItem parameterItem) 位置 F:\ctest\InjectorAutomation\InjectorAutomation\TaskInvokeLib\TaskInvoke.cs:行号 85
+   在 InjectorMainWindow.MainWindow.ShrinkB(Object sender, RoutedEventArgs e) 位置 F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\MainWindow.xaml.cs:行号 448
+   在 System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   在 System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   在 System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   在 System.Windows.UIElement.RaiseEvent(RoutedEventArgs e)
+   在 System.Windows.Controls.Primitives.ButtonBase.OnClick()
+   在 System.Windows.Controls.Button.OnClick()
+   在 System.Windows.Controls.Primitives.ButtonBase.OnMouseLeftButtonUp(MouseButtonEventArgs e)
+   在 System.Windows.UIElement.OnMouseLeftButtonUpThunk(Object sender, MouseButtonEventArgs e)
+   在 System.Windows.Input.MouseButtonEventArgs.InvokeEventHandler(Delegate genericHandler, Object genericTarget)
+   在 System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)
+   在 System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   在 System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   在 System.Windows.UIElement.ReRaiseEventAs(DependencyObject sender, RoutedEventArgs args, RoutedEvent newEvent)
+   在 System.Windows.UIElement.OnMouseUpThunk(Object sender, MouseButtonEventArgs e)
+   在 System.Windows.Input.MouseButtonEventArgs.InvokeEventHandler(Delegate genericHandler, Object genericTarget)
+   在 System.Windows.RoutedEventArgs.InvokeHandler(Delegate handler, Object target)
+   在 System.Windows.RoutedEventHandlerInfo.InvokeHandler(Object target, RoutedEventArgs routedEventArgs)
+   在 System.Windows.EventRoute.InvokeHandlersImpl(Object source, RoutedEventArgs args, Boolean reRaised)
+   在 System.Windows.UIElement.RaiseEventImpl(DependencyObject sender, RoutedEventArgs args)
+   在 System.Windows.UIElement.RaiseTrustedEvent(RoutedEventArgs args)
+   在 System.Windows.UIElement.RaiseEvent(RoutedEventArgs args, Boolean trusted)
+   在 System.Windows.Input.InputManager.ProcessStagingArea()
+   在 System.Windows.Input.InputManager.ProcessInput(InputEventArgs input)
+   在 System.Windows.Input.InputProviderSite.ReportInput(InputReport inputReport)
+   在 System.Windows.Interop.HwndMouseInputProvider.ReportInput(IntPtr hwnd, InputMode mode, Int32 timestamp, RawMouseActions actions, Int32 x, Int32 y, Int32 wheel)
+   在 System.Windows.Interop.HwndMouseInputProvider.FilterMessage(IntPtr hwnd, WindowMessage msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   在 System.Windows.Interop.HwndSource.InputFilterMessage(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   在 MS.Win32.HwndWrapper.WndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam, Boolean& handled)
+   在 MS.Win32.HwndSubclass.DispatcherCallbackOperation(Object o)
+   在 System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   在 System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
+   在 System.Windows.Threading.Dispatcher.LegacyInvokeImpl(DispatcherPriority priority, TimeSpan timeout, Delegate method, Object args, Int32 numArgs)
+   在 MS.Win32.HwndSubclass.SubclassWndProc(IntPtr hwnd, Int32 msg, IntPtr wParam, IntPtr lParam)
+   在 MS.Win32.UnsafeNativeMethods.DispatchMessage(MSG& msg)
+   在 System.Windows.Threading.Dispatcher.PushFrameImpl(DispatcherFrame frame)
+   在 System.Windows.Threading.Dispatcher.PushFrame(DispatcherFrame frame)
+   在 System.Windows.Window.ShowHelper(Object booleanBox)
+   在 System.Windows.Window.Show()
+   在 System.Windows.Window.ShowDialog()
+   在 InjectorMainWindow.MainWindow.ShowWindow() 位置 F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\MainWindow.xaml.cs:行号 152
+   在 InjectorAutomation.Program.Main(String[] args) 位置 F:\ctest\InjectorAutomation\InjectorAutomation\InjectorAutomation\Program.cs:行号 81 
+ [2020/8/21 20:31:46 , Normal] ->  
+ [2020/8/21 20:37:01 , Normal] ->  
+ [2020/8/21 20:44:06 , Normal] ->  
+ [2020/8/21 20:46:34 , Normal] ->  
+ [2020/8/21 20:46:58 , Normal] ->  
+ [2020/8/21 20:50:48 , Normal] ->  
+ [2020/8/21 20:52:33 , Normal] ->  
+ [2020/8/21 20:56:21 , Normal] ->  
+ [2020/8/21 21:01:39 , Normal] ->  
+ 

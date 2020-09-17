@@ -1,0 +1,11 @@
+F:\ctest\InjectorAutomation\InjectorAutomation\ControlLib\bin\Release\ControlLib.dll
+F:\ctest\InjectorAutomation\InjectorAutomation\ControlLib\bin\Release\ControlLib.pdb
+F:\ctest\InjectorAutomation\InjectorAutomation\ControlLib\bin\Release\Interfaces.dll
+F:\ctest\InjectorAutomation\InjectorAutomation\ControlLib\bin\Release\SerialControlLib.dll
+F:\ctest\InjectorAutomation\InjectorAutomation\ControlLib\bin\Release\Newtonsoft.Json.dll
+F:\ctest\InjectorAutomation\InjectorAutomation\ControlLib\bin\Release\Interfaces.pdb
+F:\ctest\InjectorAutomation\InjectorAutomation\ControlLib\bin\Release\Newtonsoft.Json.xml
+F:\ctest\InjectorAutomation\InjectorAutomation\ControlLib\obj\Release\ControlLib.csproj.CopyComplete
+F:\ctest\InjectorAutomation\InjectorAutomation\ControlLib\obj\Release\ControlLib.dll
+F:\ctest\InjectorAutomation\InjectorAutomation\ControlLib\obj\Release\ControlLib.pdb
+F:\ctest\InjectorAutomation\InjectorAutomation\ControlLib\obj\Release\ControlLib.csprojAssemblyReference.cache

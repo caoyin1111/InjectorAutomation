@@ -1,0 +1,11 @@
+F:\ctest\InjectorAutomation\InjectorAutomation\StationLib\bin\Release\StationLib.dll
+F:\ctest\InjectorAutomation\InjectorAutomation\StationLib\bin\Release\StationLib.pdb
+F:\ctest\InjectorAutomation\InjectorAutomation\StationLib\bin\Release\Interfaces.dll
+F:\ctest\InjectorAutomation\InjectorAutomation\StationLib\bin\Release\ServerStationLib.dll
+F:\ctest\InjectorAutomation\InjectorAutomation\StationLib\bin\Release\Newtonsoft.Json.dll
+F:\ctest\InjectorAutomation\InjectorAutomation\StationLib\bin\Release\Server.dll
+F:\ctest\InjectorAutomation\InjectorAutomation\StationLib\bin\Release\Interfaces.pdb
+F:\ctest\InjectorAutomation\InjectorAutomation\StationLib\bin\Release\Newtonsoft.Json.xml
+F:\ctest\InjectorAutomation\InjectorAutomation\StationLib\obj\Release\StationLib.csproj.CopyComplete
+F:\ctest\InjectorAutomation\InjectorAutomation\StationLib\obj\Release\StationLib.dll
+F:\ctest\InjectorAutomation\InjectorAutomation\StationLib\obj\Release\StationLib.pdb

@@ -48,8 +48,8 @@ namespace InjectorMainWindow
         private ObservableCollection<MItem> MenuItems = new ObservableCollection<MItem>()
         {
             new MItem(){ Icon = @"Resources\home.png", MenuName="首页"},
-            new MItem(){ Icon = @"Resources\log.png", MenuName="日志"},
-            new MItem(){ Icon = @"Resources\api.png", MenuName="接口测试"},
+            //new MItem(){ Icon = @"Resources\log.png", MenuName="日志"},
+            //new MItem(){ Icon = @"Resources\api.png", MenuName="接口测试"},
         };
         /// <summary>
         /// 普通日志
@@ -201,17 +201,17 @@ namespace InjectorMainWindow
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void LeftMenuClick(object sender, ItemClickEventArgs e)
-        {
-            try
-            {
-                pages.SelectedIndex = leftMenus.SelectedIndex;
-            }
-            catch(Exception ex)
-            {
-                Log.error(ex);
-            }
-        }
+        //private void LeftMenuClick(object sender, ItemClickEventArgs e)
+        //{
+        //    try
+        //    {
+        //        pages.SelectedIndex = leftMenus.SelectedIndex;
+        //    }
+        //    catch(Exception ex)
+        //    {
+        //        Log.error(ex);
+        //    }
+        //}
         /// <summary>
         /// 刷新com口
         /// </summary>
@@ -260,9 +260,9 @@ namespace InjectorMainWindow
         
         }
 
-        private int distance = 1;
+        private int distance = 10;
         /// <summary>
-        /// 左右平台A向右移动
+        /// 左右平台A向移动
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -270,6 +270,10 @@ namespace InjectorMainWindow
         {
             //判断键盘按下是否是Ctrl键
             if((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
+            {
+                distance = 50;
+            }
+            else
             {
                 distance = 10;
             }
@@ -282,6 +286,7 @@ namespace InjectorMainWindow
                     doTaskParameter = item.Value;
                     doTaskParameter.Paramters[0].Value = distance.ToString();
                     TaskInoke.DoInterface(doTaskParameter.Url, doTaskParameter);
+                    distanceAX.Text = TaskInoke.GetMoveA().ToString();
                     break;
                 }
             }
@@ -296,6 +301,10 @@ namespace InjectorMainWindow
         {
             if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
             {
+                distance = 50;
+            }
+            else
+            {
                 distance = 10;
             }
             DoTaskParameterItem doTaskParameter = null;
@@ -307,6 +316,7 @@ namespace InjectorMainWindow
                     doTaskParameter = item.Value;
                     doTaskParameter.Paramters[0].Value = distance.ToString();
                     TaskInoke.DoInterface(doTaskParameter.Url, doTaskParameter);
+                    distanceBX.Text = TaskInoke.GetMoveB().ToString();
                     break;
                 }
             }
@@ -326,6 +336,7 @@ namespace InjectorMainWindow
                 {
                     doTaskParameter = item.Value;
                     TaskInoke.DoInterface(doTaskParameter.Url, doTaskParameter);
+                    distanceAX.Text = TaskInoke.GetMoveA().ToString();
                     break;
                 }
             }
@@ -345,6 +356,7 @@ namespace InjectorMainWindow
                 {
                     doTaskParameter = item.Value;
                     TaskInoke.DoInterface(doTaskParameter.Url, doTaskParameter);
+                    distanceBX.Text = TaskInoke.GetMoveB().ToString();
                     break;
                 }
             }
@@ -365,6 +377,7 @@ namespace InjectorMainWindow
                     doTaskParameter = item.Value;
 
                     TaskInoke.DoInterface(doTaskParameter.Url, doTaskParameter);
+                    distanceZ.Text = TaskInoke.GetVertical().ToString();
                     break;
                 }
             }
@@ -376,6 +389,15 @@ namespace InjectorMainWindow
         /// <param name="e"></param>
         private void ExpendA(object sender, RoutedEventArgs e)
         {
+            //判断键盘按下是否是Ctrl键
+            if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
+            {
+                distance = 50;
+            }
+            else
+            {
+                distance = 10;
+            }
             DoTaskParameterItem doTaskParameter = null;
             Dictionary<string, DoTaskParameterItem> keys = TaskInoke.GetInterfaces();
             foreach (var item in keys)
@@ -383,8 +405,9 @@ namespace InjectorMainWindow
                 if (item.Key.Contains("expendA"))
                 {
                     doTaskParameter = item.Value;
-
+                    doTaskParameter.Paramters[0].Value = distance.ToString();
                     TaskInoke.DoInterface(doTaskParameter.Url, doTaskParameter);
+                    ElectriclDisA.Text = TaskInoke.GetMoClampA().ToString();
                     break;
                 }
             }
@@ -396,6 +419,16 @@ namespace InjectorMainWindow
         /// <param name="e"></param>
         private void ShrinkA(object sender, RoutedEventArgs e)
         {
+            //判断键盘按下是否是Ctrl键
+            if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
+            {
+                distance = 50;
+            }
+            else
+            {
+                distance = 10;
+            }
+
             DoTaskParameterItem doTaskParameter = null;
             Dictionary<string, DoTaskParameterItem> keys = TaskInoke.GetInterfaces();
             foreach (var item in keys)
@@ -403,8 +436,9 @@ namespace InjectorMainWindow
                 if (item.Key.Contains("shrinkA"))
                 {
                     doTaskParameter = item.Value;
-
+                    doTaskParameter.Paramters[0].Value = distance.ToString();
                     TaskInoke.DoInterface(doTaskParameter.Url, doTaskParameter);
+                    ElectriclDisA.Text = TaskInoke.GetMoClampA().ToString();
                     break;
                 }
             }
@@ -416,6 +450,15 @@ namespace InjectorMainWindow
         /// <param name="e"></param>
         private void ExpendB(object sender, RoutedEventArgs e)
         {
+            //判断键盘按下是否是Ctrl键
+            if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
+            {
+                distance = 50;
+            }
+            else
+            {
+                distance = 10;
+            }
             DoTaskParameterItem doTaskParameter = null;
             Dictionary<string, DoTaskParameterItem> keys = TaskInoke.GetInterfaces();
             foreach (var item in keys)
@@ -423,8 +466,9 @@ namespace InjectorMainWindow
                 if (item.Key.Contains("expendB"))
                 {
                     doTaskParameter = item.Value;
-
+                    doTaskParameter.Paramters[0].Value = distance.ToString();
                     TaskInoke.DoInterface(doTaskParameter.Url, doTaskParameter);
+                    ElectriclDisB.Text = TaskInoke.GetMoClampB().ToString();
                     break;
                 }
             }
@@ -436,6 +480,15 @@ namespace InjectorMainWindow
         /// <param name="e"></param>
         private void ShrinkB(object sender, RoutedEventArgs e)
         {
+            //判断键盘按下是否是Ctrl键
+            if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
+            {
+                distance = 50;
+            }
+            else
+            {
+                distance = 10;
+            }
             DoTaskParameterItem doTaskParameter = null;
             Dictionary<string, DoTaskParameterItem> keys = TaskInoke.GetInterfaces();
             foreach (var item in keys)
@@ -443,8 +496,9 @@ namespace InjectorMainWindow
                 if (item.Key.Contains("shrinkB"))
                 {
                     doTaskParameter = item.Value;
-
+                    doTaskParameter.Paramters[0].Value = distance.ToString();
                     TaskInoke.DoInterface(doTaskParameter.Url, doTaskParameter);
+                    ElectriclDisB.Text = TaskInoke.GetMoClampB().ToString();
                     break;
                 }
             }
@@ -456,6 +510,15 @@ namespace InjectorMainWindow
         /// <param name="e"></param>
         private void MoveLeftA(object sender, RoutedEventArgs e)
         {
+            //判断键盘按下是否是Ctrl键
+            if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
+            {
+                distance = 50;
+            }
+            else
+            {
+                distance = 10;
+            }
             DoTaskParameterItem doTaskParameter = null;
             Dictionary<string, DoTaskParameterItem> keys = TaskInoke.GetInterfaces();
             foreach (var item in keys)
@@ -463,8 +526,9 @@ namespace InjectorMainWindow
                 if (item.Key.Contains("movehorizontalleftA"))
                 {
                     doTaskParameter = item.Value;
-
+                    doTaskParameter.Paramters[0].Value = distance.ToString();
                     TaskInoke.DoInterface(doTaskParameter.Url, doTaskParameter);
+                    distanceAX.Text = TaskInoke.GetMoveA().ToString();
                     break;
                 }
             }
@@ -476,6 +540,15 @@ namespace InjectorMainWindow
         /// <param name="e"></param>
         private void MoveLeftB(object sender, RoutedEventArgs e)
         {
+            //判断键盘按下是否是Ctrl键
+            if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
+            {
+                distance = 50;
+            }
+            else
+            {
+                distance = 10;
+            }
             DoTaskParameterItem doTaskParameter = null;
             Dictionary<string, DoTaskParameterItem> keys = TaskInoke.GetInterfaces();
             foreach (var item in keys)
@@ -483,8 +556,9 @@ namespace InjectorMainWindow
                 if (item.Key.Contains("movehorizontalleftB"))
                 {
                     doTaskParameter = item.Value;
-
+                    doTaskParameter.Paramters[0].Value = distance.ToString();
                     TaskInoke.DoInterface(doTaskParameter.Url, doTaskParameter);
+                    distanceBX.Text = TaskInoke.GetMoveB().ToString();
                     break;
                 }
             }
@@ -496,6 +570,15 @@ namespace InjectorMainWindow
         /// <param name="e"></param>
         private void MoveUp(object sender, RoutedEventArgs e)
         {
+            //判断键盘按下是否是Ctrl键
+            if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
+            {
+                distance = 50;
+            }
+            else
+            {
+                distance = 10;
+            }
             DoTaskParameterItem doTaskParameter = null;
             Dictionary<string, DoTaskParameterItem> keys = TaskInoke.GetInterfaces();
             foreach (var item in keys)
@@ -503,8 +586,9 @@ namespace InjectorMainWindow
                 if (item.Key.Contains("movevectrialup"))
                 {
                     doTaskParameter = item.Value;
-
+                    doTaskParameter.Paramters[0].Value = distance.ToString();
                     TaskInoke.DoInterface(doTaskParameter.Url, doTaskParameter);
+                    distanceZ.Text = TaskInoke.GetVertical().ToString();
                     break;
                 }
             }
@@ -517,6 +601,15 @@ namespace InjectorMainWindow
         /// <param name="e"></param>
         private void MoveDown(object sender, RoutedEventArgs e)
         {
+            //判断键盘按下是否是Ctrl键
+            if ((Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control)
+            {
+                distance = 50;
+            }
+            else
+            {
+                distance = 10;
+            }
             DoTaskParameterItem doTaskParameter = null;
             Dictionary<string, DoTaskParameterItem> keys = TaskInoke.GetInterfaces();
             foreach (var item in keys)
@@ -524,10 +617,201 @@ namespace InjectorMainWindow
                 if (item.Key.Contains("movevectrialdown"))
                 {
                     doTaskParameter = item.Value;
-
+                    doTaskParameter.Paramters[0].Value = distance.ToString();
                     TaskInoke.DoInterface(doTaskParameter.Url, doTaskParameter);
+                    distanceZ.Text = TaskInoke.GetVertical().ToString();
                     break;
                 }
+            }
+        }
+        /// <summary>
+        /// 电动夹B归位
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RefreshEClampB(object sender, RoutedEventArgs e)
+        {
+            DoTaskParameterItem doTaskParameter = null;
+            Dictionary<string, DoTaskParameterItem> keys = TaskInoke.GetInterfaces();
+            foreach (var item in keys)
+            {
+                if (item.Key.Contains("horizontalClampBtozero"))
+                {
+                    doTaskParameter = item.Value;
+
+                    TaskInoke.DoInterface(doTaskParameter.Url, doTaskParameter);
+                    ElectriclDisB.Text = TaskInoke.GetMoClampB().ToString();
+                    break;
+                }
+            }
+
+        }
+        /// <summary>
+        /// 电动夹A归位
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RefreshEClampA(object sender, RoutedEventArgs e)
+        {
+            DoTaskParameterItem doTaskParameter = null;
+            Dictionary<string, DoTaskParameterItem> keys = TaskInoke.GetInterfaces();
+            foreach (var item in keys)
+            {
+                if (item.Key.Contains("horizontalClampAtozero"))
+                {
+                    doTaskParameter = item.Value;
+
+                    TaskInoke.DoInterface(doTaskParameter.Url, doTaskParameter);
+                    ElectriclDisA.Text = TaskInoke.GetMoClampA().ToString();
+                    break;
+                }
+            }
+        }
+        /// <summary>
+        /// 改变速度
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ChangedSv(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            try
+            {
+
+
+                if (TaskInoke == null)
+                {
+                    return;
+                }
+                string su = e.NewValue.ToString();
+                TaskInoke.ControlSp(su);
+            }
+            catch(Exception ex)
+            {
+                Log.error("改变速度问题" + ex.Message);
+            }
+        }
+        private bool LeftStatus = false;
+        /// <summary>
+        /// 控制左灯
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ControlLeftLed(object sender, RoutedEventArgs e)
+        {
+            if(LeftStatus == false)
+            {
+                LeftStatus = true;
+            }
+            else
+            {
+                LeftStatus = false;
+            }
+            DoTaskParameterItem doTaskParameter = null;
+            Dictionary<string, DoTaskParameterItem> keys = TaskInoke.GetInterfaces();
+            foreach (var item in keys)
+            {
+                if (item.Key.Contains("controlleftled"))
+                {
+                    doTaskParameter = item.Value;
+                    doTaskParameter.Paramters[0].Value = LeftStatus.ToString();
+                    TaskInoke.DoInterface(doTaskParameter.Url, doTaskParameter);
+             
+                    break;
+                }
+            }
+        }
+        private bool RightStatus = false;
+        /// <summary>
+        /// 控制右灯
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ControlRightLed(object sender, RoutedEventArgs e)
+        {
+            if (RightStatus == false)
+            {
+                RightStatus = true;
+            }
+            else
+            {
+                RightStatus = false;
+            }
+            DoTaskParameterItem doTaskParameter = null;
+            Dictionary<string, DoTaskParameterItem> keys = TaskInoke.GetInterfaces();
+            foreach (var item in keys)
+            {
+                if (item.Key.Contains("controlrightled"))
+                {
+                    doTaskParameter = item.Value;
+                    doTaskParameter.Paramters[0].Value = RightStatus.ToString();
+                    TaskInoke.DoInterface(doTaskParameter.Url, doTaskParameter);
+                  
+                    break;
+                }
+            }
+
+        }
+        /// <summary>
+        /// 全部复位
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AllReset(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+
+
+                DoTaskParameterItem doTaskParameter = null;
+                Dictionary<string, DoTaskParameterItem> keys = TaskInoke.GetInterfaces();
+                foreach (var item in keys)
+                {
+
+                    if (item.Key.Contains("horizontalClampBtozero"))
+                    {
+                        doTaskParameter = item.Value;
+
+                        TaskInoke.DoInterface(doTaskParameter.Url, doTaskParameter);
+                        ElectriclDisB.Text = TaskInoke.GetMoClampB().ToString();
+
+                    }
+                    else if (item.Key.Contains("horizontalClampAtozero"))
+                    {
+                        doTaskParameter = item.Value;
+
+                        TaskInoke.DoInterface(doTaskParameter.Url, doTaskParameter);
+                        ElectriclDisA.Text = TaskInoke.GetMoClampA().ToString();
+
+                    }
+                    else if (item.Key.Contains("vectrialtozero"))
+                    {
+                        doTaskParameter = item.Value;
+
+                        TaskInoke.DoInterface(doTaskParameter.Url, doTaskParameter);
+                        distanceZ.Text = TaskInoke.GetVertical().ToString();
+
+                    }
+                    else if (item.Key.Contains("horizontalAtozero"))
+                    {
+                        doTaskParameter = item.Value;
+                        TaskInoke.DoInterface(doTaskParameter.Url, doTaskParameter);
+                        distanceAX.Text = TaskInoke.GetMoveA().ToString();
+                    }
+                    else if (item.Key.Contains("horizontalBtozero"))
+                    {
+                        doTaskParameter = item.Value;
+                        TaskInoke.DoInterface(doTaskParameter.Url, doTaskParameter);
+                        distanceBX.Text = TaskInoke.GetMoveB().ToString();
+
+                    }
+
+                  
+                 
+                }
+            }
+            catch(Exception ex)
+            {
+                Log.error("全部归位问题"+ex.Message);
             }
         }
     }

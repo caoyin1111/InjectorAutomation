@@ -9,36 +9,82 @@ namespace Interfaces.Enums
     public enum Commands
     {
         /// <summary>
-        /// 初始化命令
+        /// 电机A
         /// </summary>
-        Init = 0x43,
+        ElectricMachineryA = 0x05,
         /// <summary>
-        /// 操作Z轴命令
+        /// 电机B
         /// </summary>
-        OptionZAxis = 0x5a,
+        ElectricMachineryB = 0x04,
         /// <summary>
-        /// 充电命令
+        /// 垂直电机
         /// </summary>
-        Power = 0x52,
+        ElectricVertical = 0x03,
         /// <summary>
-        /// 侧键操作
+        /// 电动夹爪A
         /// </summary>
-        SlidKey = 0x4d,
+        ElectricClampA = 0x02,
         /// <summary>
-        /// 手机治具复位命令
+        /// 电动夹爪B
         /// </summary>
-        PhoneJigRest = 0x53,
+        ElectricClampB = 0x01,
         /// <summary>
-        /// 手机治具失能使能命令
+        /// 速度控制
         /// </summary>
-        PhoneJigEnable = 0x45,
+        Speed = 0x10,
         /// <summary>
-        /// 查询固件版本号
+        /// 右灯
         /// </summary>
-        Version = 0x56,
+        RightLamp = 0x20,
         /// <summary>
-        /// 检测有无手机
+        /// 左灯
         /// </summary>
-        CheckPhone = 0x50,
+        LeftLamp = 0x21,
+        /// <summary>
+        /// 系统指示灯
+        /// </summary>
+        SystemLED = 0x30,
+        /// <summary>
+        /// 电动夹B位置
+        /// </summary>
+        ElectricClampBLocation = 0x41,
+        /// <summary>
+        /// 电动夹A位置
+        /// </summary>
+        ElectricClampALocation = 0x42,
+        /// <summary>
+        /// 垂直电机位置
+        /// </summary>
+        ElectricVerticalLocation = 0x43,
+        /// <summary>
+        /// 电机B位置
+        /// </summary>
+        ElectricMachineryBLocation = 0x44,
+        /// <summary>
+        /// 电机A位置
+        /// </summary>
+        ElectricMachineryALocation = 0x45,
+        /// <summary>
+        /// 电动夹爪B复位
+        /// </summary>
+        ElectricClampBReset = 0x51,
+        /// <summary>
+        /// 电动夹爪A复位
+        /// </summary>
+        ElectricClampAReset = 0x52,
+        /// <summary>
+        /// 垂直电机复位
+        /// </summary>
+        ElectricVerticalReset = 0x53,
+        /// <summary>
+        /// 电机B复位
+        /// </summary>
+        ElectricMachineryBReset =0x54,
+        /// <summary>
+        /// 电机A复位
+        /// </summary>
+        ElectricMachineryAReset = 0x55
+
+
     }
 }

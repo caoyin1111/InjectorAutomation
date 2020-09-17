@@ -31,6 +31,4 @@ F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\obj\Debug\Inje
 F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\obj\Debug\InjectorMainWindow.dll
 F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\obj\Debug\InjectorMainWindow.pdb
 F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\obj\Debug\GeneratedInternalTypeHelper.g.cs
-F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\obj\Debug\Resources\Icons.baml
-F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\obj\Debug\Resources\IconsNonShared.baml
 F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\obj\Debug\InjectorMainWindow.csprojAssemblyReference.cache

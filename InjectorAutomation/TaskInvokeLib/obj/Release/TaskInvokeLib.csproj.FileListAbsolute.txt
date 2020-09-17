@@ -1,0 +1,12 @@
+F:\ctest\InjectorAutomation\InjectorAutomation\TaskInvokeLib\bin\Release\TaskInvokeLib.dll
+F:\ctest\InjectorAutomation\InjectorAutomation\TaskInvokeLib\bin\Release\TaskInvokeLib.pdb
+F:\ctest\InjectorAutomation\InjectorAutomation\TaskInvokeLib\bin\Release\Interfaces.dll
+F:\ctest\InjectorAutomation\InjectorAutomation\TaskInvokeLib\bin\Release\Newtonsoft.Json.dll
+F:\ctest\InjectorAutomation\InjectorAutomation\TaskInvokeLib\bin\Release\ServerStationLib.dll
+F:\ctest\InjectorAutomation\InjectorAutomation\TaskInvokeLib\bin\Release\Server.dll
+F:\ctest\InjectorAutomation\InjectorAutomation\TaskInvokeLib\bin\Release\Interfaces.pdb
+F:\ctest\InjectorAutomation\InjectorAutomation\TaskInvokeLib\bin\Release\Newtonsoft.Json.xml
+F:\ctest\InjectorAutomation\InjectorAutomation\TaskInvokeLib\obj\Release\TaskInvokeLib.csproj.CopyComplete
+F:\ctest\InjectorAutomation\InjectorAutomation\TaskInvokeLib\obj\Release\TaskInvokeLib.dll
+F:\ctest\InjectorAutomation\InjectorAutomation\TaskInvokeLib\obj\Release\TaskInvokeLib.pdb
+F:\ctest\InjectorAutomation\InjectorAutomation\TaskInvokeLib\obj\Release\TaskInvokeLib.csprojAssemblyReference.cache

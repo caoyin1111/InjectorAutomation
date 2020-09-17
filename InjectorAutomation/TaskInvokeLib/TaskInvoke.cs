@@ -35,6 +35,7 @@ namespace TaskInvokeLib
         /// 任务函数核参数列表
         /// </summary>
         private Dictionary<string, DoTaskParameterItem> TaskParameterItems = new Dictionary<string, DoTaskParameterItem>();
+
         /// <summary>
         /// 串口组
         /// </summary>
@@ -148,6 +149,7 @@ namespace TaskInvokeLib
                 System.IO.Ports.Parity.None, Convert.ToInt32(StaticParameter.GetValue("Control.DataBits")), System.IO.Ports.StopBits.One);
                 ControlCom.Open();
                 Log.log("连接控制成功");
+                ControlCom.ControlSystemLED("绿");
             }
             catch(Exception ex)
             {
@@ -156,5 +158,57 @@ namespace TaskInvokeLib
 
             }
         }
+        /// <summary>
+        /// 获取水平轴a的位置
+        /// </summary>
+        /// <returns></returns>
+        public int GetMoveA()
+        {
+
+            return ControlCom.GetHorizontalA();
+        }
+        /// <summary>
+        /// 获取水平轴B的位置
+        /// </summary>
+        /// <returns></returns>
+        public int GetMoveB()
+        {
+            return ControlCom.GetHorizontalB();
+        }
+        /// <summary>
+        /// 获得垂直轴的位置
+        /// </summary>
+        /// <returns></returns>
+        public int GetVertical()
+        {
+            return ControlCom.GetVertical();
+        }
+        /// <summary>
+        /// 获得电动夹A的位置
+        /// </summary>
+        /// <returns></returns>
+        public int GetMoClampA()
+        {
+            return ControlCom.GetElectricClampA();
+        }
+        /// <summary>
+        /// 获得电动夹B的位置
+        /// </summary>
+        /// <returns></returns>
+        public int GetMoClampB()
+        {
+            return ControlCom.GetElectricClampB();
+        }
+        /// <summary>
+        /// 控制电机速度
+        /// </summary>
+        /// <param name="sta"></param>
+        /// <returns></returns>
+        public bool ControlSp(string sta)
+        {
+            return ControlCom.ControlSpeed(sta);
+        }
+
+
     }
 }

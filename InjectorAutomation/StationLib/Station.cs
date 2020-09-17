@@ -24,6 +24,7 @@ namespace StationLib
         public Station()
         {
             this.ServerStation = new ServerStation();
+            ServerStation.ErrorMsg += new Action<object[]>(do_Error);
         }
         /// <summary>
         /// 转化器
@@ -74,5 +75,10 @@ namespace StationLib
         {
             return this.ServerStation.Start(ip, port);
         }
+        public void do_Error(object[] obj)
+        {
+            Log.error(obj);
+        }
+
     }
 }

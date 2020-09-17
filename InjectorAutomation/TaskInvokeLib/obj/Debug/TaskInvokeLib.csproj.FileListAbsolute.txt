@@ -2,7 +2,6 @@ F:\ctest\InjectorAutomation\InjectorAutomation\TaskInvokeLib\bin\Debug\TaskInvok
 F:\ctest\InjectorAutomation\InjectorAutomation\TaskInvokeLib\bin\Debug\TaskInvokeLib.pdb
 F:\ctest\InjectorAutomation\InjectorAutomation\TaskInvokeLib\obj\Debug\TaskInvokeLib.dll
 F:\ctest\InjectorAutomation\InjectorAutomation\TaskInvokeLib\obj\Debug\TaskInvokeLib.pdb
-F:\ctest\InjectorAutomation\InjectorAutomation\TaskInvokeLib\obj\Debug\TaskInvokeLib.csprojAssemblyReference.cache
 F:\ctest\InjectorAutomation\InjectorAutomation\TaskInvokeLib\bin\Debug\Interfaces.dll
 F:\ctest\InjectorAutomation\InjectorAutomation\TaskInvokeLib\bin\Debug\Newtonsoft.Json.dll
 F:\ctest\InjectorAutomation\InjectorAutomation\TaskInvokeLib\bin\Debug\ServerStationLib.dll
@@ -10,3 +9,4 @@ F:\ctest\InjectorAutomation\InjectorAutomation\TaskInvokeLib\bin\Debug\Server.dl
 F:\ctest\InjectorAutomation\InjectorAutomation\TaskInvokeLib\bin\Debug\Interfaces.pdb
 F:\ctest\InjectorAutomation\InjectorAutomation\TaskInvokeLib\bin\Debug\Newtonsoft.Json.xml
 F:\ctest\InjectorAutomation\InjectorAutomation\TaskInvokeLib\obj\Debug\TaskInvokeLib.csproj.CopyComplete
+F:\ctest\InjectorAutomation\InjectorAutomation\TaskInvokeLib\obj\Debug\TaskInvokeLib.csprojAssemblyReference.cache

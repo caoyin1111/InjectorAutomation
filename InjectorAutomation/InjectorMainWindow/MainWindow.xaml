@@ -25,7 +25,7 @@
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
-                <ResourceDictionary Source="F:\ctest\InjectorAutomation\InjectorAutomation\InjectorMainWindow\Resources\Icons.xaml" />
+                <ResourceDictionary Source="Resources\Icons.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
             <Style list:Key="DescriptionHeaderStyle" TargetType="Label">
@@ -83,6 +83,7 @@
     </controls:MetroWindow.Resources>
     
         <Canvas Name="mainLayout" Background="#ededed">
+
         <Grid
             Width="{Binding ElementName=main, Path=ActualWidth, Converter={StaticResource gridside}}"
             Height="{Binding ElementName=mainLayout, Path=ActualHeight}" Canvas.Left="50">
@@ -102,7 +103,7 @@
                     <ColumnDefinition />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" Margin="0,0,-0.2,0">
                     <StackPanel
                         Margin="5,1,1,1"
                         MouseDown="Link"
@@ -125,15 +126,45 @@
                             VerticalAlignment="Center"
                             Text="断开连接" />
                     </StackPanel>
+                <StackPanel Margin="0,0,0,0.4" Width="50">
+                    <Button Height="29" Margin="0,0,-0.4,0" Click="ControlLeftLed" >
+                        左灯
+                    </Button>
                 </StackPanel>
-                <Border
-                    Grid.Column="1"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                  >
-                    <TextBlock Name="version" Text="" />
-                </Border>
+                <StackPanel Margin="0,0,0,0.4" Width="50">
+                    <Button Height="29" Margin="0,0,-0.4,0" Click="ControlRightLed" >
+                        右灯
+                    </Button>
+                </StackPanel>
+                <StackPanel Margin="0,0,0,0.4" Width="57">
+                    <Button Height="29" Margin="0,0,-0.2,0" Click="AllReset">
+                        全部归位
+                    </Button>
+                </StackPanel>
+                <StackPanel Margin="200,0,0,0.4" Width="200" >
+                        <DockPanel Height="29">
+                            <TextBlock Margin ="3" Text="电机速度" FontSize="13"/>
+                            <Slider
+                                        list:Name="sv"
+                                        AutoToolTipPlacement="TopLeft"
+                                        AutoToolTipPrecision="0"
+                                        IsSnapToTickEnabled="True"
+                                        Maximum="9"
+                                        Minimum="1"
+                                        SmallChange="1"
+                                        TickFrequency="1" Width="125"
+                                        TickPlacement="BottomRight"
+                                        ValueChanged="ChangedSv"
+                                     />
+                            <TextBlock Margin="3,3,3,2.8" FontSize="13" Text="{Binding ElementName=sv, Path=Value}" Width="20"/>
+
+                        </DockPanel>
+                    </StackPanel>
+
+                </StackPanel>
+
             </Grid>
+       
             <controls:MetroAnimatedSingleRowTabControl
                 Name="pages"
                 Grid.ColumnSpan="3"
@@ -143,169 +174,175 @@
                         <Setter Property="TabItem.Visibility" Value="Collapsed" />
                     </Style>
                 </controls:MetroAnimatedSingleRowTabControl.ItemContainerStyle>
-    
-    
-        <TabItem Header="图表">
 
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="200*"/>
-            <RowDefinition Height="400*"/>
-            <RowDefinition Height="100*"/>
-        </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0">
-            <GroupBox Header="左右平台A" Margin="0,0,-0.4,0">
-                <StackPanel Orientation="Vertical">
-                    <StackPanel Height="40" Orientation="Horizontal">
-                        <TextBlock Text="水平轴x:" FontSize="18" Margin="20,10,0,1">
-                        </TextBlock>
-                        <TextBlock Text="{Binding distanceAX}" FontSize="18" Margin="1,10,0,1">
-                        </TextBlock>
-                        <TextBlock Text="电动夹爪A" FontSize="15" Width="80" Margin="190,10,0,1">
-                        </TextBlock>
 
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <!-->
+                <TabItem Header="图表">
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="200*"/>
+                            <RowDefinition Height="400*"/>
+                            <RowDefinition Height="100*"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0">
+                            <GroupBox Header="左右平台A" Margin="0,0,-0.4,0">
+                                <StackPanel Orientation="Vertical">
+                                    <StackPanel Height="40" Orientation="Horizontal">
+                                        <TextBlock Text="1号推头水平:" FontSize="18" Margin="20,10,0,1">
+                                        </TextBlock>
+                                        <TextBlock x:Name="distanceAX" Text="{Binding Path=Value}" FontSize="18" Margin="1,10,0,1">
+                                        </TextBlock>
+                                        <TextBlock Text="2号推头压板:" FontSize="18" Width="104" Margin="160,10,0,1">
+                                        </TextBlock>
+                                        <TextBlock x:Name="ElectriclDisA" Text="{Binding Path= Value}" FontSize="18" Margin="1,10,1,1" Width="50">
+                                        </TextBlock>
+
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <!-->
                             <Button Width="70" Height="70" Margin="145,10,145,1">
                             <Image Width="60" Height="60" Source="Resources\up.png">
                             </Image>
                         </Button>
                         <-->
-                        <StackPanel Margin="10,0,0,0" Width="334">
-                            <Button Height="70" Width ="70" Margin="10,1,254.4,20" Click="MoveLeftA">
-                                <Image Source="Resources\left.png">
-                                </Image>
-                            </Button>
-                            <Button Height="70" Margin="153,-103,108.4,7" Click="MoveA">
-                                <Image Source="Resources\right.png">
-                                </Image>
-                            </Button>
-                            <!-->
+                                        <StackPanel Margin="10,0,0,0" Width="270">
+                                            <Button Height="70" Width ="70" Margin="10,1,190,20" Click="MoveA">
+                                                <Image Source="Resources\left.png">
+                                                </Image>
+                                            </Button>
+                                            <Button Width="70" Height="70" Margin="106,-103,0,7" Click="MoveLeftA">
+                                                <Image Source="Resources\Right.png">
+                                                </Image>
+                                            </Button>
+                                            <!-->
                             <Button Width="70" Height="70" Margin="145,1,145,80">
                             <Image Source="Resources\down.png">
                             </Image>
                         </Button>
                         <-->
-                            <Button Height="70" Width="70" Margin="80,-210,181.4,-100" Click="RefreshA">
-                                <Image Source="Resources\refresh.png">
-                                </Image>
-                            </Button>
+                                            <Button Height="70" Width="70" Margin="82,-210,118,-100" Click="RefreshA">
+                                                <Image Source="Resources\refresh.png">
+                                                </Image>
+                                            </Button>
+                                        </StackPanel>
+                                        <StackPanel Width="438">
+                                            <Button Margin="0,0,366,0" Height="70" Width="70" Click="ExpendA">
+                                                <Image Source="Resources\suoxiao.png">
+                                                </Image>
+                                            </Button>
+                                            <Button Width="70" Height="70" Margin="-220,-70,1,3" Click="RefreshEClampA">
+                                               <Image Source="Resources\refresh.png">
+                                                </Image>
+                                            </Button>
+                                            <Button Margin="-76,-74,0,0" Height="70" Width="70" Click="ShrinkA">
+                                                <Image Source="Resources\kuoda.png">
+                                                </Image>
+                                            </Button>
+                                        </StackPanel>
+
+                                    </StackPanel>
+                                </StackPanel>
+
+                            </GroupBox>
                         </StackPanel>
-                        <StackPanel Width="438">
-                            <Button Margin="0,0,366.4,0" Height="70" Width="70" Click="ExpendA">
-                                <Image Source="Resources\kuoda.png">
-                                </Image>
-                            </Button>
-                            <Button Margin="-220,-70,0,0" Height="70" Width="70" Click="ShrinkA">
-                                <Image Source="Resources\suoxiao.png">
-                                </Image>
-                            </Button>
+                        <StackPanel Grid.Row="1">
+                            <GroupBox Header="左右平台B" Margin="0,0,0,0">
+                                <StackPanel Margin="3">
+                                    <StackPanel Margin="3" Height="40" Orientation="Horizontal">
+                                        <TextBlock Text="3号注射器水平:" FontSize="18" Margin="20,10,0,5">
+                                        </TextBlock>
+                                        <TextBlock x:Name="distanceBX" Text="{Binding Path=Value}" FontSize="18" Margin="10,10,10,5" Width="65">
+
+                                        </TextBlock>
+                                        <TextBlock Text="4号注射器夹持:" FontSize="18" Width="125" Margin="50,10,0,1">
+                                        </TextBlock>
+                                       <TextBlock x:Name="ElectriclDisB" Text="{Binding Path= Value}" FontSize="18" Margin="1,10,1,1" Width="50">
+                                       </TextBlock>
+
+                                     <TextBlock Text="5号注射器垂直:" FontSize="18" Margin="60,10,0,5">
+                                        </TextBlock>
+                                        <TextBlock x:Name="distanceZ" Text="{Binding Path=Value}" FontSize="18" Margin="10,10,0,5" Width="62">
+                                        </TextBlock>
+
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <StackPanel Margin="20,0,0,0" HorizontalAlignment="Stretch" Width="221">
+
+                                            <Button Width="70" Height="70" Margin="1,1,148,1" Click="MoveB">
+                                                <Image Source="Resources\left.png">
+                                                </Image>
+                                            </Button>
+                                            <Button Height="70" Width="70" Margin="142,-70,0,1" Click="MoveLeftB">
+                                                <Image Source="Resources\Right.png">
+                                                </Image>
+                                            </Button>
+                                           
+                                            <Button Height="70" Width="70" Margin="73,-225,75,-152" Click="RefreshB">
+                                                <Image Source="Resources\refresh.png">
+                                                </Image>
+                                            </Button>
+                                        </StackPanel>
+                                        <StackPanel Margin="40,0,0,0" Width="220">
+                                            <Button Height="70" Width="70" Margin="0,0,150,0" Click="ExpendB">
+                                                <Image Source="Resources\suoxiao.png">
+                                                </Image>
+                                            </Button>
+                                            <Button Height="70" Width="70" Margin="-5,-70,0,0" Click="RefreshEClampB">
+                                                <Image Source="Resources\refresh.png">
+                                                </Image>
+                                            </Button>
+                                            <Button Height="70" Margin="143,-70,4.4,0" Width="70" Click="ShrinkB">
+                                                <Image Source="Resources\kuoda.png">
+                                                </Image>
+                                            </Button>
+                                        </StackPanel>
+
+                                        <StackPanel Margin="60,0,0,0" Width="79">
+                                            <Button Width="70" Height="70" Margin="1,1,1,3" Click="MoveUp">
+                                                <Image Source="Resources\up.png">
+                                                </Image>
+                                            </Button>
+                                            <Button Width="70" Height="70" Margin="1,0,1,3" Click="RefreshVertical">
+                                                <Image Source="Resources\refresh.png">
+                                                </Image>
+                                            </Button>
+                                            <Button Width="70" Height="70" Margin="1,1,1,3" Click="MoveDown">
+                                                <Image Source="Resources\down.png">
+                                                </Image>
+                                            </Button>
+
+                                        </StackPanel>
+
+
+                                    </StackPanel>
+                                </StackPanel>
+                            </GroupBox>
                         </StackPanel>
-
-                    </StackPanel>
-                </StackPanel>
-
-            </GroupBox>
-        </StackPanel>
-        <StackPanel Grid.Row="1">
-            <GroupBox Header="左右平台B" Margin="0,0,0,0">
-                <StackPanel Margin="3">
-                    <StackPanel Margin="3" Height="40" Orientation="Horizontal">
-                        <TextBlock Text="水平轴x:" FontSize="18" Margin="20,10,0,5">
-                        </TextBlock>
-                        <TextBlock Text="{Binding distanceBX}" FontSize="18" Margin="10,10,10,5" Width="65">
-
-                        </TextBlock>
-                        <TextBlock Text="电动夹爪B" FontSize="15" Width="80" Margin="100,10,0,1">
-                        </TextBlock>
-                        
-                        <TextBlock Text="垂直轴z:" FontSize="18" Margin="140,10,0,5">
-                        </TextBlock>
-                        <TextBlock Text="{Binding distanceZ}" FontSize="18" Margin="10,10,0,5" Width="62">
-                        </TextBlock>
-                        
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <StackPanel Margin="20,0,0,0" HorizontalAlignment="Stretch">
-                            <Button Width="70" Height="70" Margin="77,1,133,1">
-                                <Image Source="Resources\up.png">
-                                </Image>
-                            </Button>
-                            <Button Width="70" Height="70" Margin="1,1,202,1" Click="MoveLeftB">
-                                <Image Source="Resources\left.png">
-                                </Image>
-                            </Button>
-                            <Button Height="70" Width="70" Margin="146,-70,54.8,1" Click="MoveB">
-                                <Image Source="Resources\right.png">
-                                </Image>
-                            </Button>
-                            <Button Width="70" Height="70" Margin="-55,1,1,0">
-                                <Image Source="Resources\down.png">
-                                </Image>
-                            </Button>
-                            <Button Height="70" Width="70" Margin="76,-368,130.8,-152" Click="RefreshB">
-                                <Image Source="Resources\refresh.png">
-                                </Image>
-                            </Button>
-                        </StackPanel>
-                        <StackPanel Margin="40,0,0,0" Width="150">
-                            <Button Height="70" Margin="0,0,79.4,0" Click="ExpendB">
-                                <Image Source="Resources\kuoda.png">
-                                </Image>
-                            </Button>
-                            <Button Height="70" Margin="72,-70,4.4,0" Width="70" Click="ShrinkB">
-                                <Image Source="Resources\suoxiao.png">
-                                </Image>
-                            </Button>
-                        </StackPanel>
-
-                        <StackPanel Margin="70,0,0,0" Width="79">
-                            <Button Width="70" Height="70" Margin="1,1,1,3" Click="MoveUp">
-                                <Image Source="Resources\up.png">
-                                </Image>
-                            </Button>
-                            <Button Width="70" Height="70" Margin="1,0,1,3" Click="RefreshVertical">
-                                <Image Source="Resources\refresh.png">
-                                </Image>
-                            </Button>
-                            <Button Width="70" Height="70" Margin="1,1,1,3" Click="MoveDown">
-                                <Image Source="Resources\down.png">
-                                </Image>
-                            </Button>
-
-                        </StackPanel>
-
-
-                    </StackPanel>
-                </StackPanel>
-            </GroupBox>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal"  Margin="0,10" Grid.Row="2">
-            <ComboBox BorderThickness="0" Background="{x:Null}" ItemsSource="{Binding ElementName=main,Path=ExitComs}" Foreground="#444444"
+                        <StackPanel Orientation="Horizontal"  Margin="0,10" Grid.Row="2">
+                            <ComboBox BorderThickness="0" Background="{x:Null}" ItemsSource="{Binding ElementName=main,Path=ExitComs}" Foreground="#444444"
                                                           Name="com"
                                                            Width="130"
                                                           VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0,0,0,21.6"/>
 
-            <Button
+                            <Button
                                 Height="40"
                                 Margin="5,0,0,0"
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Top"
                                 Click="RefreshComs">
-                <Button.Content>
-                    <Image Source="Resources\refresh.png" />
-                </Button.Content>
-            </Button>
+                                <Button.Content>
+                                    <Image Source="Resources\refresh.png" />
+                                </Button.Content>
+                            </Button>
 
-            <TextBlock
+                            <TextBlock
                                 Margin="40,0,0,0"
                                 VerticalAlignment="Top"
                                 Text="服务器:" />
-            <TextBox
+                            <TextBox
                                 Name="ipbox"
                                 Width="100"
                                 Margin="5,0,0,0"
@@ -318,7 +355,7 @@
                                 BorderThickness="0"
                                 FontSize="18"
                                 Text="127.0.0.1" />
-            <TextBox
+                            <TextBox
                                 Name="portbox"
                                 Width="100"
                                 Margin="5,0,0,0"
@@ -331,13 +368,13 @@
                                 BorderThickness="0"
                                 FontSize="18"
                                 Text="8787" />
-        </StackPanel>
-    </Grid>
+                        </StackPanel>
+                    </Grid>
     
         </TabItem>
-    
-    
-        <TabItem Header="日志">
+
+
+                <TabItem Header="日志">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="30" />
@@ -530,14 +567,19 @@
                 </TabItem>
             </controls:MetroAnimatedSingleRowTabControl>
         </Grid>
+
         <controls:HamburgerMenu
             Name="leftMenus"
             Height="570"
             MinWidth="40"
             BorderBrush="Black"
-            BorderThickness="1"
-            ItemClick="LeftMenuClick">
-            <controls:HamburgerMenu.Content>
+            BorderThickness="1">
+    
+            <!-->
+                ItemClick="LeftMenuClick">
+            <-->
+    
+        <controls:HamburgerMenu.Content>
                 <StackPanel />
             </controls:HamburgerMenu.Content>
             <controls:HamburgerMenu.ItemTemplate>
@@ -561,7 +603,8 @@
                 </DataTemplate>
             </controls:HamburgerMenu.ItemTemplate>
         </controls:HamburgerMenu>
-    </Canvas>
+        
+            </Canvas>
 
 </controls:MetroWindow>
 
